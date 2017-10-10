@@ -1,0 +1,11 @@
+h2 Sign Up
+p find me at "views/users/new.html.slim"
+
+= simple_form_for @user do |f|
+  = f.input :email
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :twitter, required: false
+  = f.input :preffered_name, required: false
+  = f.select :house
+  = f.button :submit
