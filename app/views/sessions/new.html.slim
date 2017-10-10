@@ -1,0 +1,9 @@
+h1 Sessions#new
+p Find me in app/views/sessions/new.html.slim
+
+= simple_form_for :session, url: login_path do |f|
+  = f.input :email
+  = f.input :password
+  = f.submit "Log in"
+
+= link_to "Sign Up", new_user_path

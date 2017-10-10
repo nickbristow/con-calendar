@@ -7,5 +7,7 @@ p find me at "views/users/new.html.slim"
   = f.input :last_name
   = f.input :twitter, required: false
   = f.input :preffered_name, required: false
-  = f.select :house
-  = f.button :submit
+  label for="user_house" House
+  = f.select :house, ["Wigglebottom", "Puddlefoot"]
+  p
+    = f.button  :submit
