@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: concalendar_production
   username: concalendar
   password: <%= ENV['CONCALENDAR_DATABASE_PASSWORD'] %>
