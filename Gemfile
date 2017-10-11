@@ -18,6 +18,8 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'basscss-rails'
 
+gem 'devise'
+
 gem 'slim-rails'
 
 gem 'simple_form'
