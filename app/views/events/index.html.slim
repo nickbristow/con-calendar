@@ -1,0 +1,14 @@
+h2 Events
+p
+  = link_to 'Create event', new_event_path
+ul
+  - @events.each do |event|
+    li
+      ul
+        li
+          | Name: 
+          = link_to event.name, event_path(event)
+        li
+          | Date: 
+          = event.date
+

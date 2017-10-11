@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :users
+  resources :events
 
   # devise_for :users, controllers: {
   #   sessions: 'users/sessions'

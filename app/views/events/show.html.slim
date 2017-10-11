@@ -1,0 +1,17 @@
+h2 Event
+
+p
+  = link_to 'Edit event', edit_event_path(@event)
+
+p
+  | Name: 
+  = @event.name
+p
+  | Description:
+  = @event.description
+p
+  | Date: 
+  = @event.date
+p
+  | Owner: 
+  = @event.user.name

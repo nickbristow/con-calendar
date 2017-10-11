@@ -1,0 +1,11 @@
+= simple_form_for @event do |f|
+  = f.input :name
+  = f.input :description, as: :text
+  = f.input :date, as: :date, start_year: 2018,
+                              end_year: 2018,
+                              start_month: 7,
+                              end_month: 7,
+                              start_day: 18,
+                              end_day: 23,
+                              order: [:month, :day, :year]
+  = f.submit
