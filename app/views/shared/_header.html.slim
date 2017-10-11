@@ -1,0 +1,5 @@
+h1 
+  - unless current_page?(root_path)
+    = link_to "Geekly-Con 2018 Calendar", root_path
+  - else
+    = "Geekly-Con 2018 Calendar"
