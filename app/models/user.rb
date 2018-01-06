@@ -38,6 +38,6 @@ class User < ApplicationRecord
   end
   
   def test
-    "test"
+    "test2"
   end
 end
