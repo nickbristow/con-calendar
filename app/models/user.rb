@@ -36,4 +36,8 @@ class User < ApplicationRecord
       preffered_name
     end
   end
+  
+  def test
+    "test"
+  end
 end
