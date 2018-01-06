@@ -36,4 +36,9 @@ class User < ApplicationRecord
       preffered_name
     end
   end
+  
+  def test
+    useless = 'useless'
+    "testdkdkdkdkkdkdkdkdkk ksd fksd flksjd fkjsdlkfj sldkfjslkdfjlskdjflksdj flksdjflksjdfl ksjdfl ksjdflksjdflks jdflksjd flkdfs df sdf sdf sd"
+  end
 end
