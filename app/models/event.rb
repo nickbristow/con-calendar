@@ -14,4 +14,21 @@
 
 class Event < ApplicationRecord
   belongs_to :user
+  
+  def butt
+    a = 1
+    b = a 
+    a = b
+    b = a 
+    a = b
+    b = a 
+    a = bb = a 
+    a = bv
+    b = a 
+    a = b
+    b = a 
+    a = b
+    b = a 
+    a = b
+  end
 end
