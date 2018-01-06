@@ -14,4 +14,8 @@
 
 class Event < ApplicationRecord
   belongs_to :user
+  
+  def butt
+    "butt"
+  end
 end
