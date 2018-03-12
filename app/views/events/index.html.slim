@@ -1,14 +1,18 @@
-h2 Events
-p
-  = link_to 'Create event', new_event_path
-ul
-  - @events.each do |event|
-    li
-      ul
-        li
-          | Name: 
-          = link_to event.name, event_path(event)
-        li
-          | Date: 
-          = event.date
+.usa-navcontainer
+  .usa-nav
+    ul.usa-nav-primary.usa-accordion
+      li
+        = link_to 'Create event', new_event_path
 
+h2 Events
+h3 July 19
+- @events.each do|event|
+  .usa-width-one-third
+    h4 
+      = link_to event.name, event_path(event)
+  .usa-width-two-third
+    = event.description
+  hr
+h3 July 20
+h3 July 21
+h3 July 22

@@ -9,11 +9,17 @@
     <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body class='page-basic-header layout-demo'>
+    <a class="usa-skipnav" href="#main-content">Skip to main content</a>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= render 'shared/banner' %>
     <%= render 'shared/header' %>
     <%= render 'shared/nav' %>
-    <%= yield %>
+    <div class='usa-grid usa-section'>
+      <%= yield %>
+    </div>
   </body>
 </html>
+
+
