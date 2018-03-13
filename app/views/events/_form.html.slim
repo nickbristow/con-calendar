@@ -1,11 +1,25 @@
-= simple_form_for @event do |f|
+= simple_form_for @event, html: {class: "usa-form-large"} do |f|
   = f.input :name
   = f.input :description, as: :text
-  = f.input :date, as: :date, start_year: 2018,
-                              end_year: 2018,
-                              start_month: 7,
-                              end_month: 7,
-                              start_day: 18,
-                              end_day: 23,
-                              order: [:month, :day, :year]
+  div
+    = f.input :category, :collection => ["GeeklyCon Special Event", "Panel", "RPG", "Game", "Outing"]
+    = f.input :date, :collection => [["July 19, 2018", "07/19/18"], ["July 20, 2018", "07/20/18"], ["July 21, 2018", "07/21/18"], ["July 22, 2018", "07/22/18"]]
+  fieldset
+    legend = "Start Time"
+    div
+      .usa-input-grid.usa-input-grid-extra-small
+        = f.input :start_time_hour, :collection => ["1", "2", "3", "4", "5", "6","7","8","9","10","11","12"], label: "hour", include_blank: false
+      .usa-input-grid.usa-input-grid-extra-small
+        = f.input :start_time_minute, :collection => ["00","15", "30", "45"], label: "min", include_blank: false
+      .usa-input-grid.usa-input-grid-extra-small
+        = f.input :start_time_am_pm, :collection => ["am", "pm"], label: "am/pm", include_blank: false
+  fieldset
+    legend = "End Time"
+    div
+      .usa-input-grid.usa-input-grid-extra-small
+        = f.input :end_time_hour, :collection => ["1", "2", "3", "4", "5", "6","7","8","9","10","11","12"], label: "hour", include_blank: false
+      .usa-input-grid.usa-input-grid-extra-small
+        = f.input :end_time_minute, :collection => ["00","15", "30", "45"], label: "min", include_blank: false
+      .usa-input-grid.usa-input-grid-extra-small
+        = f.input :end_time_am_pm, :collection => ["am", "pm"], label: "am/pm", include_blank: false
   = f.submit
