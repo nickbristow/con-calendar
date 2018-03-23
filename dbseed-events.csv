@@ -1,0 +1,20 @@
+owner_id,name,date,category,start_time,end_time,description,max_attendees,location
+1,Live Show,07/20/18,official_event,7:00 PM,10:00 PM,All your favorite shows!,500,
+2,Nick Runs an RPG,07/21/18,game,3:00 PM,4:00 PM,Nick is going to run an RPG,6,Game room
+1,The Zoo,07/21/18,outing,4:00 PM,9:00 PM,The world famous columbus zoo. Meet in the lobby at 3pm,500,Columbus Zoo
+3,I love podcasting,07/22/18,panel,11:00 AM,1:00 PM,"I michael, like podcasting",50,Panel Room A
+3,Yer a Wizard Harry Live,07/21/18,panel,11:00 AM,12:00 PM,Watch Quizzich live!,100,Panel Room A
+1,Building a Pidcast,07/20/18,panel,10:00 AM,11:00 AM,A discussion of how they built their version of a podcast.,100,Panel Room A
+1,Sugoi Corp. Live Show,07/20/18,panel,11:00 AM,12:00 PM,Come watch a panel of weaboos create the word's latest and greatest anime series based on submissions from listeners!,100,Panel Room A
+4,Editing Video and Audio,07/20/18,panel,1:00 PM,2:00 PM,Take a deep dive with GeeklyInc editor David Stewart Into some of the challenges associated with editing both video and audio.  This will be an educational experience mixed with entertainment from both GeeklyInc and David’s own productions.  Prepare to laugh and learn. Q&A at the end...,100,Panel Room A
+1,GeeklyCommune 2,07/20/18,panel,2:00 PM,3:00 PM,It's Back and It's Pissed. Lets solve every problem.,100,Panel Room A
+5,PFS @ GeeklyCon,07/21/18,game,10:00 AM,11:00 AM,Let's run some Pathfinder Society tables at GeeklyCon! Some fun Society games before PFS 1.0 disappears in 2019! ,25,Panel Room B
+1,Better Know A Geekly Live!,07/21/18,panel,1:00 PM,2:00 PM,"It’s the third annual Libe BKAG! Come watch Matthew make a fool of himself while he interviews some of your favorite members of the community. Sometimes it’s funny, sometimes it’s real, sometimes we search for the real cause of 9/11. This won’t interfere with karaoke (probably).",100,Panel Room A
+6,GLBB’s Golden Lemon Bubble Butt 2018,07/21/18,panel,2:00 PM,3:00 PM,"Join us for our annual listener-submitted smut competition! You’re bound to have a laugh, a groan, and possibly even...a moan. (18+ only)",100,Panel Room A
+1,Circus Village,07/21/18,panel,3:00 PM,4:00 PM,"Part unrecorded live show of an unreleased podcast, part interactive game show where the biggest prize might just be the friends you lose along the way, part man, part machine, all cop.",100,Panel Room A
+7,The Stranger Lands Podcast Live Show,07/21/18,panel,4:00 PM,5:00 PM,The Stranger Lands Live!!! A live recording of an episode of TSL. Content is TBA. It might be a Q&A session. It might be story content. Who knows? We don’t. ,100,Panel Room A
+8,Phil's Cheeto and Compliment Hour,07/22/18,panel,10:00 AM,11:00 AM,"I will eat Cheetos. One by one you all will come to the microphone and compliment me. I can choose not to eat Cheetos, you must continue to compliment me for the full hour. ",100,Panel Room A
+1,Sacred Cows Tonight Presents: Supreme Court of Moovies,07/22/18,panel,11:00 AM,12:00 PM,"In the media justice system, movie based offenses are considered especially heinous. At Sacred Cows Tonight, the dedicated reviewers who investigate these vicious felonies are members of an elite court known as the Supreme Court of Moovies. These are their stories.
+
+Featuring: Mike, Pete, and Adam Bash as Judges, Matthew Morris as Prosecutor/Defender, and Eli Ramsey as Bailiff, and other surprises.",100,Panel Room A
+5,Jack and Tori Rate Animals,07/22/18,panel,1:00 PM,2:00 PM,"Jack and Tori became friends due to one factor: their intense hatred of a dumb animal. Come join them as they talk about animals both great and terrible, rating them as they go, including submissions from others. Note: if you submit The Worst Frog, Jack will throw you into the sun.",100,Panel Room A

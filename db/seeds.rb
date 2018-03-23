@@ -6,3 +6,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'csv' 
+
+
+# Setup Users
+csv_text = File.read('dbseed-users.csv')
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  row_hash = row.to_hash
+  row_hash[:password] = 'password'
+  row_hash[:password_confirmation] = 'password'
+  puts row_hash
+  User.create!(row_hash) unless User.where(id: row_hash['id']).count != 0
+end
+
+# Setup Events
+csv_text = File.read('dbseed-events.csv')
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  row_hash = row.to_hash
+  row_hash[:user_id] = row_hash['owner_id']
+  puts row_hash
+  Event.create!(row_hash)
+end

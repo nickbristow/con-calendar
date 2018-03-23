@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @events = Event.all
+    @events = filter_events
   end
   
   def show
@@ -41,6 +41,29 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def filter_events
+    if !event_filter_categories.empty?
+      Event.where(category: event_filter_categories)
+    else
+      Event.all
+    end
+  end
+
+  def event_filter_params
+    params.permit(:official_event, :panel)
+  end
+
+  def event_filter_categories
+    cat = []
+    if params[:official_event]
+      cat.push('official_event')
+    end
+    if params[:panel]
+      cat.push('panel')
+    end
+    cat
+  end
 
   def event_params
     params.require(:event).permit(:name, :description, :date, :start_time, :end_time, :category)

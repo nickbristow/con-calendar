@@ -1,0 +1,20 @@
+id,first_name,last_name,email,admin
+1,Geekly Inc,,geekly@geeklyinc.com,TRUE
+2,Nick,Bristow,richard.nick.bristow@gmail.com,TRUE
+3,Michael,Dimauro,michael@geeklyinc.com,TRUE
+4,Carly,Shields,carly@geeklyinc.com,TRUE
+5,Tim,Lanning,tim@geeklyinc.com,TRUE
+6,John,Doe,johndoe@gmail.com,FALSE
+7,Jane,Dinky,janedinky@gmail.com,FALSE
+8,Matthew,Morris,Mmmorris08@gmail.com,FALSE
+9,Murphy,Giller,Rmgiller@gmail.com,FALSE
+10,Joshua,Scalf,jwscalf@gmail.com,FALSE
+11,David,Stewart,Admin@spudcam.com,FALSE
+12,Hugo,Alvord,gba@pdx.edu,FALSE
+13,Adam,Daw,adam@adamdaw.com,FALSE
+14,Ali,Norero,norero.ali@gmail.com,FALSE
+15,Adam,Bash,adambash6@Gmail.com,FALSE
+16,Jonathan,Bussler,TheStrangerLands@gmail.com,FALSE
+17,Phillip,Canada,canadaphillip@gmail.com,FALSE
+18,Mike,Urban,sacredcows@herooftheweb.com,FALSE
+19,Jack,Reidy,jjriv0212@gmail.com,FALSE
