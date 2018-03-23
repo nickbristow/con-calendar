@@ -1,21 +1,14 @@
-<header class="usa-header usa-header-basic" role="banner">
-  <div class="usa-nav-container">
-    <div class="usa-navbar">
-      <div class="usa-logo">
-        <em class="usa-logo-text">
-          = link_to "Geeklycon Calendar", "/"
-        </em>
-      </div>
-    </div>
-    nav.usa-nav
-      ul.usa-nav-primary.usa-nav-accordian
-        - if !user_signed_in?
-          li = link_to "Sign Up", new_user_registration_path
-          li = link_to "Sign In", new_user_session_path
-        - else
-          li = link_to "View events", events_path
-          li = link_to "View users", users_path
-          li = link_to "Edit profile", edit_user_registration_path
-          li = button_to "Sign out", destroy_user_session_path , :method => :delete, class: 'small-button'
-  </div>
-</header>
+nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+  = link_to "Geeklycon Calendar", root_path, class: "navbar-brand"
+  .collapse.navbar-collapse id="navbarsExampleDefault"
+    ul.navbar-nav.mr-auto
+      - if user_signed_in?
+        li.nav-item = link_to "View events", events_path, class: 'nav-link'
+        li.nav-item = link_to "View users", users_path, class: 'nav-link'
+        li.nav-item = link_to "Edit profile", edit_user_registration_path, class: 'nav-link'
+    .form-inline.my-2.my-lg-0
+      - if !user_signed_in?
+        = link_to "Sign Up", new_user_registration_path, class: 'btn btn-outline-primary my-2 my-sm-0 mx-1'
+        = link_to "Sign In", new_user_session_path, class: 'btn btn-outline-success my-2 my-sm-0 mx-1'
+      - else
+        = button_to "Sign out", destroy_user_session_path , :method => :delete, class: 'btn btn-outline-warning my-2 my-sm-0'
