@@ -14,5 +14,5 @@
  *= require_self
  *= require custom.scss
  *= require basscss/basscss
- *= require scss/bootstrap.css.scss
+ *= require vendor/scss/bootstrap.css.scss
  */
