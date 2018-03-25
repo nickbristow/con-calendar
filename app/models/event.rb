@@ -28,4 +28,14 @@ class Event < ApplicationRecord
   		""
   	end
   end
+
+  def self.event_categories(user)
+  	if user.admin
+  		["official_event", "panel", "game", "outing"]
+  	else
+  		["game"]
+  	end
+  end
 end
+
+

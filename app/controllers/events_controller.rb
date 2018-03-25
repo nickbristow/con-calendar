@@ -6,7 +6,9 @@ class EventsController < ApplicationController
   end
 
   def my_events
-    @events = filter_events.select{|e| e.users.include?(current_user)}
+    @events = filter_events.select{|e|
+      e.users.include?(current_user) || e.owner_id == current_user.id
+    }
     render 'my_calendar'
   end
   

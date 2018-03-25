@@ -5,10 +5,14 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
   .collapse.navbar-collapse id="navbarsExampleDefault"
     ul.navbar-nav.mr-auto
       - if user_signed_in?
-        li.nav-item = link_to "Calendar", events_path, class: 'nav-link'
-        li.nav-item = link_to "My calendar", events_my_calendar_path, class: 'nav-link'
-        li.nav-item = link_to "View users", users_path, class: 'nav-link'
-        li.nav-item = link_to "Edit profile", edit_user_registration_path, class: 'nav-link'
+        li[class="nav-item #{active_page_class(events_path)}"]
+          = link_to "Calendar", events_path, class: 'nav-link'
+        li[class="nav-item #{active_page_class(events_my_calendar_path)}"]
+          = link_to "My calendar", events_my_calendar_path, class: 'nav-link'
+        li[class="nav-item #{active_page_class(users_path)}"]
+          = link_to "View users", users_path, class: 'nav-link'
+        li[class="nav-item #{active_page_class(edit_user_registration_path)}"]
+          = link_to "Edit profile", edit_user_registration_path, class: 'nav-link'
     .form-inline.my-2.my-lg-0
       - if !user_signed_in?
         = link_to "Sign Up", new_user_registration_path, class: 'btn btn-outline-primary my-2 my-sm-0 mx-1'
