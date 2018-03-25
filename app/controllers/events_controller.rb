@@ -46,7 +46,13 @@ class EventsController < ApplicationController
     if !event_filter_categories.empty?
       Event.includes(:users).where(category: event_filter_categories).sort_by{ |e| e.start_time }
     else
-      Event.includes(:users).all.sort_by { |e| e.start_time }
+      Event.includes(:users).all.sort_by { |e| 
+        if e.start_time
+          e.start_time 
+        else
+          Time.now
+        end
+      }
     end
   end
 

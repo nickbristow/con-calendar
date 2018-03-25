@@ -20,4 +20,12 @@ class Event < ApplicationRecord
   def attendee_count
   	users.count
   end
+
+  def time_period
+  	if start_time && end_time
+  		"#{start_time.strftime("%I:%M%p")}-#{end_time.strftime("%I:%M%p")}"
+  	else
+  		""
+  	end
+  end
 end

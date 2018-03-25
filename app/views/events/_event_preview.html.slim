@@ -11,7 +11,7 @@ table.table
 		- events.each do |event|
 			- next unless event.date == event_date
 			tr[class="table-row-#{event.category}", id="event-id-#{event.id}"]
-				td = "#{event.start_time.strftime("%I:%M%p")}-#{event.end_time.strftime("%I:%M%p")}"
+				td = event.time_period
 				td 
 					strong = link_to event.name, event_path(event)
 				td = event.category
