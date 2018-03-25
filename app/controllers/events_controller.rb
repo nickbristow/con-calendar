@@ -44,9 +44,9 @@ class EventsController < ApplicationController
 
   def filter_events
     if !event_filter_categories.empty?
-      Event.where(category: event_filter_categories)
+      Event.includes(:users).where(category: event_filter_categories).sort_by{ |e| e.start_time }
     else
-      Event.all
+      Event.includes(:users).all.sort_by { |e| e.start_time }
     end
   end
 
@@ -66,6 +66,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :description, :date, :start_time, :end_time, :category)
+    params.require(:event).permit(:name, :description, :date, :start_time, :end_time, :category, :max_attendees)
   end
 end

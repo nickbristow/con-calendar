@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :events
+  resources :appointments
 
   # devise_for :users, controllers: {
   #   sessions: 'users/sessions'

@@ -1,5 +1,6 @@
 = simple_form_for @event, html: {class: "usa-form-large"} do |f|
   = f.input :name
+  = f.input :max_attendees
   = f.input :description, as: :text
   div
     = f.input :category, :collection => ["GeeklyCon Special Event", "Panel", "RPG", "Game", "Outing"]

@@ -1,22 +1,32 @@
-.row
-	.col-md-2
-	.col-md-2
-		h3.h4.mb-3.font-weight-normal Event name
-	.col-md-2
-		h3.h4.mb-3.font-weight-normal Category
-	.col-md-6
-		h3.h4.mb-3.font-weight-normal Description
-hr
-- events.each do |event|
- - next unless event.date == event_date
- .row
- 	.col-md-2
- 		/ = event.start_time.in_time_zone("Eastern Time (US & Canada)")
- 		= "#{event.start_time.strftime("%I:%M%p")} - #{event.end_time.strftime("%I:%M%p")}"
- 	.col-md-2
- 		= link_to event.name, event_path(event)
- 	.col-md-2
- 		= event.category
- 	.col-md-6
- 		= event.description
- hr
+table.table
+	thead.thead-dark
+		tr
+			th Time
+			th Event Name
+			th Category
+			th Attendees
+			th Description
+			th
+	tbody
+		- events.each do |event|
+			- next unless event.date == event_date
+			tr[class="table-row-#{event.category}", id="event-id-#{event.id}"]
+				td = "#{event.start_time.strftime("%I:%M%p")}-#{event.end_time.strftime("%I:%M%p")}"
+				td 
+					strong = link_to event.name, event_path(event)
+				td = event.category
+				td = "#{event.attendee_count}/#{event.max_attendees}"
+				td = event.description
+				td
+					- if event.attendee_count >= event.max_attendees
+						strong Event full
+					- elsif event.users.include?(current_user)
+						- appointment = event.appointments.where(user: current_user).first
+						= simple_form_for appointment, url: appointment_path(appointment), method: :delete do |f|
+							= f.hidden_field :path, value: "#{request.fullpath}#event-id-#{event.id}"
+							= f.button :submit, "Remove"
+					- else
+						= simple_form_for Appointment.new do |f|
+							= f.hidden_field :event_id, value: event.id
+							= f.hidden_field :path, value: "#{request.fullpath}#event-id-#{event.id}"
+							= f.button :submit, "Add to my calendar"

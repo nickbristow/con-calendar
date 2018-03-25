@@ -25,7 +25,6 @@ csv_text = File.read('dbseed-events.csv')
 csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
   row_hash = row.to_hash
-  row_hash[:user_id] = row_hash['owner_id']
   puts row_hash
   Event.create!(row_hash)
 end
