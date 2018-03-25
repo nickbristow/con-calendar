@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get 'events/my_calendar', to: 'events#my_events'
+
   resources :users, only: [:index, :update, :show]
   resources :events
   resources :appointments

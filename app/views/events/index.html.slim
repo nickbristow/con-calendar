@@ -1,31 +1,5 @@
 .container
   .row
     .col-md-12
-      h1.h1.mb-3.font-weight-normal Events
-      .row
-        .col-md-2
-          = link_to 'Create event', new_event_path, class: "btn btn-sm btn-primary btn-block"
-      .col-md6
-        = form_tag(events_path, method: :get) do |f|
-          = label_tag 'Official Event'
-          = check_box_tag 'official_event', '1', params[:official_event] == "1"
-          = label_tag 'Panel'
-          = check_box_tag 'panel', '1', params[:panel] == "1"
-          = button_tag "Filter", class: "btn btn-sm btn-primary btn-block"
-
-      .row
-        .col-md-6
-          h2.h2.mb-3.font-weight-normal July 19, 2018
-      = render partial: 'event_preview', :locals => {events: @events, event_date: '07/19/18'}
-      .row
-        .col-md-6
-          h2.h2.mb-3.font-weight-normal July 20, 2018
-      = render partial: 'event_preview', :locals => {events: @events, event_date: '07/20/18'}
-      .row
-        .col-md-6
-          h2.h2.mb-3.font-weight-normal July 21, 2018
-      = render partial: 'event_preview', :locals => {events: @events, event_date: '07/21/18'}
-      .row
-        .col-md-6
-          h2.h2.mb-3.font-weight-normal July 22, 2018
-      = render partial: 'event_preview', :locals => {events: @events, event_date: '07/22/18'}
+      h1.h1.mb-3.font-weight-normal Calendar
+      = render partial: 'calendar'

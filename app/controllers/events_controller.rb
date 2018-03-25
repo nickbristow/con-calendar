@@ -4,6 +4,11 @@ class EventsController < ApplicationController
   def index
     @events = filter_events
   end
+
+  def my_events
+    @events = filter_events.select{|e| e.users.include?(current_user)}
+    render 'my_calendar'
+  end
   
   def show
     @event = Event.find(params[:id])
