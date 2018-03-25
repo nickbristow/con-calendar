@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :users
+  resources :users, only: [:index, :update, :show]
   resources :events
   resources :appointments
 

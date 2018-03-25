@@ -3,7 +3,7 @@
   = f.input :max_attendees
   = f.input :description, as: :text
   div
-    = f.input :category, :collection => ["GeeklyCon Special Event", "Panel", "RPG", "Game", "Outing"]
+    = f.input :category, :collection => ["official_event", "panel", "game", "outing"]
     = f.input :date, :collection => [["July 19, 2018", "07/19/18"], ["July 20, 2018", "07/20/18"], ["July 21, 2018", "07/21/18"], ["July 22, 2018", "07/22/18"]]
   fieldset
     legend = "Start Time"

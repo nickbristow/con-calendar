@@ -50,6 +50,7 @@ group :development, :test do
   gem 'annotate', require: false
   gem 'byebug', platform: :mri
   gem 'pry'
+  gem 'pry-byebug'
   gem 'rubocop'
 end
 
