@@ -2,7 +2,7 @@
 	- appointment = event.appointments.where(user: current_user).first
 	= simple_form_for appointment, url: appointment_path(appointment), method: :delete do |f|
 		= f.hidden_field :path, value: "#{request.fullpath}#event-id-#{event.id}"
-		= f.button :submit, "Remove", class: "btn btn-sm btn-danger btn-block"
+		= f.button :submit, "Remove from my calendar", class: "btn btn-sm btn-danger btn-block"
 - elsif event.attendee_count >= event.max_attendees
 	strong Event full
 - else

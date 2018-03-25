@@ -4,23 +4,15 @@
   = f.input :description, as: :text
   div
     = f.input :category, :collection => ["official_event", "panel", "game", "outing"]
-    = f.input :date, :collection => [["July 19, 2018", "07/19/18"], ["July 20, 2018", "07/20/18"], ["July 21, 2018", "07/21/18"], ["July 22, 2018", "07/22/18"]]
+    = f.input :date, :collection => [["July 19, 2018", "2018/07/19"], ["July 20, 2018", "2018/07/20"], ["July 21, 2018", "2018/07/21"], ["July 22, 2018", "2018/07/22"]]
   fieldset
     legend = "Start Time"
     div
       .usa-input-grid.usa-input-grid-extra-small
-        = f.input :start_time_hour, :collection => ["1", "2", "3", "4", "5", "6","7","8","9","10","11","12"], label: "hour", include_blank: false
-      .usa-input-grid.usa-input-grid-extra-small
-        = f.input :start_time_minute, :collection => ["00","15", "30", "45"], label: "min", include_blank: false
-      .usa-input-grid.usa-input-grid-extra-small
-        = f.input :start_time_am_pm, :collection => ["am", "pm"], label: "am/pm", include_blank: false
+        = f.input :start_time, as: :time, html5: true
   fieldset
     legend = "End Time"
     div
       .usa-input-grid.usa-input-grid-extra-small
-        = f.input :end_time_hour, :collection => ["1", "2", "3", "4", "5", "6","7","8","9","10","11","12"], label: "hour", include_blank: false
-      .usa-input-grid.usa-input-grid-extra-small
-        = f.input :end_time_minute, :collection => ["00","15", "30", "45"], label: "min", include_blank: false
-      .usa-input-grid.usa-input-grid-extra-small
-        = f.input :end_time_am_pm, :collection => ["am", "pm"], label: "am/pm", include_blank: false
+        = f.input :end_time, as: :time, html5: true
   = f.submit
