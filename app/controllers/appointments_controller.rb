@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+	after_action :update_event_attendee_count, only: [:create, :destroy]
 	def create
 		@appointment = Appointment.new(appointment_params)
 		@appointment.user = current_user
@@ -29,4 +30,10 @@ class AppointmentsController < ApplicationController
 	def appointment_params
 		params.require(:appointment).permit(:event_id)
 	end
+
+	def update_event_attendee_count
+		@appointment.event.update_attendee_count
+	end
 end
+
+

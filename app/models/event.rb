@@ -18,7 +18,13 @@ class Event < ApplicationRecord
   attr_accessor :start_time_hour, :end_time_hour, :start_time_minute, :end_time_minute, :end_time_hour, :end_time_am_pm, :start_time_am_pm
 
   def attendee_count
+  	return current_attendees if !current_attendees.nil?
+ 		self.update(current_attendees: users.count)
   	users.count
+  end
+
+  def update_attendee_count
+  	self.update(current_attendees: users.count)
   end
 
   def time_period
