@@ -1,6 +1,6 @@
 - if event.owner_id == current_user.id
 	= button_tag "My event", class: "disabled btn btn-sm btn-light btn-block", disabled: true
-- elsif event.users.include?(current_user)
+- elsif @users_events.include?(event)
 	- appointment = event.appointments.where(user: current_user).first
 	= simple_form_for appointment, url: appointment_path(appointment), method: :delete do |f|
 		= f.hidden_field :path, value: "#{request.fullpath}#event-id-#{event.id}"

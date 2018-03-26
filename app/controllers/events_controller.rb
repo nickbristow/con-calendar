@@ -3,11 +3,13 @@ class EventsController < ApplicationController
 
   def index
     @events = filter_events
+    @users_events = current_user.events
   end
 
   def my_events
+    @users_events = current_user.events
     @events = filter_events.select{|e|
-      e.users.include?(current_user) || e.owner_id == current_user.id
+      @users_events.include?(e) || e.owner_id == current_user.id
     }
     render 'my_calendar'
   end
