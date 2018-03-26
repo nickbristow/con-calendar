@@ -1,20 +1,21 @@
-table.table
-	thead.thead-dark
-		tr
-			th Time
-			th Event Name
-			th Category
-			th Attendees
-			th Description
-			th
-	tbody
-		- events.each do |event|
-			- next unless event.date == event_date
-			tr[class="table-row-#{event.category}", id="event-id-#{event.id}"]
-				td = event.time_period
-				td 
-					strong = link_to event.name, event_path(event)
-				td = event.category
-				td = "#{event.attendee_count}/#{event.max_attendees}"
-				td = event.description
-				td = render partial: 'shared/modify_attendee', locals: {event: event }
+.table-responsive
+	table.table
+		thead.thead-dark
+			tr
+				th Time
+				th Event Name
+				th.hide-column Category
+				th.hide-column Attendees
+				th.hide-column Description
+				th
+		tbody
+			- events.each do |event|
+				- next unless event.date == event_date
+				tr[class="table-row-#{event.category}", id="event-id-#{event.id}"]
+					td = event.time_period
+					td 
+						strong = link_to event.name, event_path(event)
+					td.hide-column = event.category
+					td.hide-column = "#{event.attendee_count}/#{event.max_attendees}"
+					td.hide-column = event.description
+					td = render partial: 'shared/modify_attendee', locals: {event: event }

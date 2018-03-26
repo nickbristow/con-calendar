@@ -18,3 +18,9 @@
 .table-row-outing{
 	background-color: #F7ECAF;
 }
+
+@media only screen and (max-width: 769px) {
+	.hide-column{
+		display: none;
+	}
+}
