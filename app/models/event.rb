@@ -42,6 +42,11 @@ class Event < ApplicationRecord
   		["game"]
   	end
   end
+
+  def category_name
+    cat_names = {game: 'Game', official_event: 'Geekly', outing: 'Outing', panel: 'Panel'}
+    cat_names[category.to_sym]
+  end
 end
 
 
