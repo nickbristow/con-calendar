@@ -1,27 +1,39 @@
-.row
+.row.my2
   .col-md-2
     = link_to 'Create event', new_event_path, class: "btn btn-sm btn-primary btn-block"
-.col-md6
-  = form_tag(events_path, method: :get) do |f|
-    = label_tag 'Official Event'
-    = check_box_tag 'official_event', '1', params[:official_event] == "1"
-    = label_tag 'Panel'
-    = check_box_tag 'panel', '1', params[:panel] == "1"
-    = button_tag "Filter", class: "btn btn-sm btn-primary btn-block"
+= form_tag(events_path, method: :get) do |f|
+  .row.my1
+    .col-md-6
+      .form-check.form-check-inline
+        = check_box_tag 'official_event', '1', params[:official_event] == "1", class: 'form-check-input'
+        = label_tag 'official_event', 'Official Event', class: 'form-check-label'
+      .form-check.form-check-inline
+        = check_box_tag 'panel', '1', params[:panel] == "1", class: 'form-check-input'
+        = label_tag 'panel', 'Panel', class: 'form-check-label'
+      .form-check.form-check-inline
+        = check_box_tag 'outing', '1', params[:outing] == "1", class: 'form-check-input'
+        = label_tag 'outing', 'Outing', class: 'form-check-label'
+      .form-check.form-check-inline
+        = check_box_tag 'game', '1', params[:game] == "1", class: 'form-check-input'
+        = label_tag 'game', 'Game', class: 'form-check-label'
+  .row
+    .col-md-2
+      = button_tag "Filter", class: "btn btn-sm btn-primary btn-block"
 
-.row
+hr
+.row.my2
   .col-md-6
     h2.h2.mb-3.font-weight-normal July 19, 2018
 = render partial: 'event_preview', :locals => {events: @events, event_date: '07/19/18'}
-.row
+.row.my2
   .col-md-6
     h2.h2.mb-3.font-weight-normal July 20, 2018
 = render partial: 'event_preview', :locals => {events: @events, event_date: '07/20/18'}
-.row
+.row.my2
   .col-md-6
     h2.h2.mb-3.font-weight-normal July 21, 2018
 = render partial: 'event_preview', :locals => {events: @events, event_date: '07/21/18'}
-.row
+.row.my2
   .col-md-6
     h2.h2.mb-3.font-weight-normal July 22, 2018
 = render partial: 'event_preview', :locals => {events: @events, event_date: '07/22/18'}

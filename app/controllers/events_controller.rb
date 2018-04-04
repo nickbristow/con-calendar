@@ -84,6 +84,12 @@ class EventsController < ApplicationController
     if params[:panel]
       cat.push('panel')
     end
+    if params[:game]
+      cat.push('game')
+    end
+    if params[:outing]
+      cat.push('outing')
+    end
     cat
   end
 
