@@ -1,3 +1,9 @@
+default:
+	print 'type make deploy; make compile; make migrate_heroku; make reset_pk;'
+
+run:
+	bundle exec rails s
+
 deploy:
 	git push heroku master
 
