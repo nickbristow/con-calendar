@@ -24,7 +24,6 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.owner_id = current_user.id
 
     if @event.save
       flash[:success] = "saved"
@@ -94,6 +93,9 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :description, :date, :start_time, :end_time, :category, :max_attendees)
+    if params[:event][:owner_id].blank? || !current_user.admin?
+      params[:event][:owner_id] = current_user.id
+    end
+    params.require(:event).permit(:name, :description, :date, :start_time, :end_time, :category, :max_attendees, :owner_id)
   end
 end
