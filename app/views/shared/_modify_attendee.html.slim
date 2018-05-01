@@ -1,14 +1,14 @@
 - if event.owner_id == current_user.id
-	= button_tag "My event", class: "disabled btn btn-sm btn-light btn-block", disabled: true
-- elsif @users_events.include?(event)
-	- appointment = event.appointments.where(user: current_user).first
-	= simple_form_for appointment, url: appointment_path(appointment), method: :delete do |f|
-		= f.hidden_field :path, value: "#{request.fullpath}#event-id-#{event.id}"
-		= f.button :submit, "Remove me", class: "btn btn-sm btn-danger btn-block"
+  = button_tag "My event", class: "disabled btn btn-sm btn-light btn-block", disabled: true
+- elsif @users_events.find { |e| e.id == event.id }
+  - appointment = @user_appointments.find {|a| a.event_id == event.id}
+  = simple_form_for appointment, url: appointment_path(appointment), method: :delete do |f|
+    = f.hidden_field :path, value: "#{request.fullpath}#event-id-#{event.id}"
+    = f.button :submit, "Remove me", class: "btn btn-sm btn-danger btn-block"
 - elsif event.attendee_count >= event.max_attendees
-	= button_tag "Event full", class: "disabled btn btn-sm btn-light btn-block", disabled: true
+  = button_tag "Event full", class: "disabled btn btn-sm btn-light btn-block", disabled: true
 - else
-	= simple_form_for Appointment.new do |f|
-		= f.hidden_field :event_id, value: event.id
-		= f.hidden_field :path, value: "#{request.fullpath}#event-id-#{event.id}"
-		= f.button :submit, "Add to my calendar", class: "btn btn-sm btn-primary btn-block"
+  = simple_form_for Appointment.new do |f|
+    = f.hidden_field :event_id, value: event.id
+    = f.hidden_field :path, value: "#{request.fullpath}#event-id-#{event.id}"
+    = f.button :submit, "Add to my calendar", class: "btn btn-sm btn-primary btn-block"

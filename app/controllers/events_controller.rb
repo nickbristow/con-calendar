@@ -7,11 +7,13 @@ class EventsController < ApplicationController
     @current_path = events_path
     @events = filter_events
     @users_events = current_user.events
+    @user_appointments = current_user.appointments
   end
 
   def my_events
     @current_path = events_my_calendar_path
     @users_events = current_user.events
+    @user_appointments = current_user.appointments
     @events = filter_events.select do |e|
       @users_events.include?(e) || e.owner_id == current_user.id
     end
@@ -62,21 +64,7 @@ class EventsController < ApplicationController
   private
 
   def filter_events
-    if !event_filter_categories.empty?
-      Event.where(category: event_filter_categories).sort_by(&:start_time)
-    else
-      Event.all.sort_by do |e|
-        if e.start_time
-          e.start_time
-        else
-          Time.now
-        end
-      end
-    end
-  end
-
-  def event_filter_params
-    params.permit(:official_event, :panel)
+    Event.where(category: event_filter_categories).sort_by(&:start_time)
   end
 
   def event_filter_categories
@@ -85,7 +73,11 @@ class EventsController < ApplicationController
     cat.push('panel') if params[:panel]
     cat.push('game') if params[:game]
     cat.push('outing') if params[:outing]
-    cat
+    if cat.empty?
+      ['official_event', 'panel', 'game', 'outing']
+    else
+      cat
+    end
   end
 
   def event_params
