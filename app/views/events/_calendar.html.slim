@@ -6,16 +6,24 @@
     .col-md-6
       .form-check.form-check-inline
         = check_box_tag 'official_event', '1', params[:official_event] == "1", class: 'form-check-input'
-        = label_tag 'official_event', 'Official Event', class: 'form-check-label'
+        = label_tag 'official_event', 'Official Event', class: 'form-check-label' do
+          = image_tag("geekly_icon.png", size: 20, alt: "")
+          = " Official Event"
       .form-check.form-check-inline
         = check_box_tag 'panel', '1', params[:panel] == "1", class: 'form-check-input'
-        = label_tag 'panel', 'Panel', class: 'form-check-label'
+        = label_tag 'panel', 'Panel', class: 'form-check-label' do
+          = image_tag("panel_icon.png", size: 20, alt: "")
+          = " Panel"
       .form-check.form-check-inline
         = check_box_tag 'outing', '1', params[:outing] == "1", class: 'form-check-input'
-        = label_tag 'outing', 'Outing', class: 'form-check-label'
+        = label_tag 'outing', 'Outing', class: 'form-check-label' do
+          = image_tag("outing_icon.png", size: 20, alt: "")
+          = " Outing"
       .form-check.form-check-inline
         = check_box_tag 'game', '1', params[:game] == "1", class: 'form-check-input'
-        = label_tag 'game', 'Game', class: 'form-check-label'
+        = label_tag 'game', 'Game', class: 'form-check-label' do
+          = image_tag("game_icon.png", size: 20, alt: "")
+          = " Game"
   .row
     .col-md-2
       = button_tag "Filter", class: "btn btn-sm btn-primary btn-block"

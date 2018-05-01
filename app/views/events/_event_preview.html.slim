@@ -22,12 +22,12 @@
 - events.each do |event|
   - next unless event.date == event_date
   .row[class="table-row-#{event.category} px1 py1 my1", id="event-id-#{event.id}"]
+    .col-md-1 
+      = image_tag("#{event.category_name.downcase}_icon.png", size: 40, alt: event.category_name)
     .col-md-2
       strong = link_to event.name, event_path(event)
     .col-md-1 = event.time_period
     .col-md-1 = event.location
-    .col-md-1 
-      strong = event.category_name
     .col-md-1 
       span[title='number attending the panel']
         = "#{event.attendee_count}/#{event.max_attendees}"
