@@ -4,11 +4,13 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @current_path = events_path
     @events = filter_events
     @users_events = current_user.events
   end
 
   def my_events
+    @current_path = events_my_calendar_path
     @users_events = current_user.events
     @events = filter_events.select do |e|
       @users_events.include?(e) || e.owner_id == current_user.id

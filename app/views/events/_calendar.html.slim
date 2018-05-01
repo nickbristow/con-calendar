@@ -1,7 +1,7 @@
 .row.my2
   .col-md-2
     = link_to 'Create event', new_event_path, class: "btn btn-sm btn-primary btn-block"
-= form_tag(events_path, method: :get) do |f|
+= form_tag(@current_path, method: :get) do |f|
   .row.my1
     .col-md-6
       .form-check.form-check-inline
