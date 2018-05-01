@@ -1,36 +1,37 @@
 / .table-responsive
-/ 	table.table
-/ 		thead.thead-dark
-/ 			tr
-/ 				th Time
-/ 				th Event Name
-/ 				th.hide-column Category
-/ 				th.hide-column Attendees
-/ 				th.hide-column Description
-/ 				th
-/ 		tbody
-/ 			- events.each do |event|
-/ 				- next unless event.date == event_date
-/ 				tr[class="table-row-#{event.category}", id="event-id-#{event.id}"]
-/ 					td = event.time_period
-/ 					td 
-/ 						strong = link_to event.name, event_path(event)
-/ 					td.hide-column = event.category
-/ 					td.hide-column = "#{event.attendee_count}/#{event.max_attendees}"
-/ 					td.hide-column = event.description
-/ 					td = render partial: 'shared/modify_attendee', locals: {event: event }
+/   table.table
+/     thead.thead-dark
+/       tr
+/         th Time
+/         th Event Name
+/         th.hide-column Category
+/         th.hide-column Attendees
+/         th.hide-column Description
+/         th
+/     tbody
+/       - events.each do |event|
+/         - next unless event.date == event_date
+/         tr[class="table-row-#{event.category}", id="event-id-#{event.id}"]
+/           td = event.time_period
+/           td 
+/             strong = link_to event.name, event_path(event)
+/           td.hide-column = event.category
+/           td.hide-column = "#{event.attendee_count}/#{event.max_attendees}"
+/           td.hide-column = event.description
+/           td = render partial: 'shared/modify_attendee', locals: {event: event }
 - events.each do |event|
-	- next unless event.date == event_date
-	.row[class="table-row-#{event.category} px1 py1 my1", id="event-id-#{event.id}"]
-		.col-md-2
-			strong = link_to event.name, event_path(event)
-		.col-md-1 = event.time_period
-		.col-md-1 
-			strong = event.category_name
-		.col-md-1 
-			span[title='number attending the panel']
-				= "#{event.attendee_count}/#{event.max_attendees}"
-		.col-md-5 = event.description + "#{event.attendee_count}/#{event.max_attendees}"
-		.col-md-2 = render partial: 'shared/modify_attendee', locals: {event: event }
+  - next unless event.date == event_date
+  .row[class="table-row-#{event.category} px1 py1 my1", id="event-id-#{event.id}"]
+    .col-md-2
+      strong = link_to event.name, event_path(event)
+    .col-md-1 = event.time_period
+    .col-md-1 = event.location
+    .col-md-1 
+      strong = event.category_name
+    .col-md-1 
+      span[title='number attending the panel']
+        = "#{event.attendee_count}/#{event.max_attendees}"
+    .col-md-4 = event.description
+    .col-md-2 = render partial: 'shared/modify_attendee', locals: {event: event }
 
 

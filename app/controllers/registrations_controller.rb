@@ -1,8 +1,9 @@
-class RegistrationsController < Devise::RegistrationsController
+# frozen_string_literal: true
 
-	def create
-		super
-	end
+class RegistrationsController < Devise::RegistrationsController
+  def create
+    super
+  end
 
   private
 

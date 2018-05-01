@@ -22,6 +22,11 @@
           = User.find(@event.owner_id).name
       .row
         .col-md-2
+          strong Location:
+        .col-md-5
+          = @event.location
+      .row
+        .col-md-2
           strong Date:
         .col-md-1
         	= @event.date

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: events
@@ -13,40 +15,38 @@
 #
 
 class Event < ApplicationRecord
-	has_many :appointments, dependent: :destroy
+  has_many :appointments, dependent: :destroy
   has_many :users, through: :appointments
   attr_accessor :start_time_hour, :end_time_hour, :start_time_minute, :end_time_minute, :end_time_hour, :end_time_am_pm, :start_time_am_pm
 
   def attendee_count
-  	return current_attendees if !current_attendees.nil?
- 		self.update(current_attendees: users.count)
-  	users.count
+    return current_attendees unless current_attendees.nil?
+    update(current_attendees: users.count)
+    users.count
   end
 
   def update_attendee_count
-  	self.update(current_attendees: users.count)
+    update(current_attendees: users.count)
   end
 
   def time_period
-  	if start_time && end_time
-  		"#{start_time.strftime("%I:%M%p")}-#{end_time.strftime("%I:%M%p")}"
-  	else
-  		""
-  	end
+    if start_time && end_time
+      "#{start_time.strftime('%I:%M%p')}-#{end_time.strftime('%I:%M%p')}"
+    else
+      ''
+    end
   end
 
   def self.event_categories(user)
-  	if user.admin
-  		["official_event", "panel", "game", "outing"]
-  	else
-  		["game"]
-  	end
+    if user.admin
+      %w[official_event panel game outing]
+    else
+      ['game']
+    end
   end
 
   def category_name
-    cat_names = {game: 'Game', official_event: 'Geekly', outing: 'Outing', panel: 'Panel'}
+    cat_names = { game: 'Game', official_event: 'Geekly', outing: 'Outing', panel: 'Panel' }
     cat_names[category.to_sym]
   end
 end
-
-

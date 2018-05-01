@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, controllers: { registrations: 'registrations' }
   get 'sessions/new'
 
   root 'home#index'
 
   get 'events/my_calendar', to: 'events#my_events'
 
-  resources :users, only: [:index, :update, :show]
+  resources :users, only: %i[index update show]
   resources :events
   resources :appointments
 
