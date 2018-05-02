@@ -7,12 +7,12 @@
       .form-check.form-check-inline
         = check_box_tag 'official_event', '1', params[:official_event] == "1", class: 'form-check-input'
         = label_tag 'official_event', 'Official Event', class: 'form-check-label' do
-          = image_tag("http://www.geeklyinc.com/images/gc18/icon-cal-outing.png", size: 20, alt: "")
+          = image_tag("http://www.geeklyinc.com/images/gc18/icon-cal-geekly.png", size: 20, alt: "")
           = " Official Event"
       .form-check.form-check-inline
         = check_box_tag 'panel', '1', params[:panel] == "1", class: 'form-check-input'
         = label_tag 'panel', 'Panel', class: 'form-check-label' do
-          = image_tag("http://www.geeklyinc.com/images/gc18/icon-cal-outing.png", size: 20, alt: "")
+          = image_tag("http://www.geeklyinc.com/images/gc18/icon-cal-panel.png", size: 20, alt: "")
           = " Panel"
       .form-check.form-check-inline
         = check_box_tag 'outing', '1', params[:outing] == "1", class: 'form-check-input'
