@@ -1,7 +1,8 @@
 .container
   .row
     .col-md-12
-      h1.h1.mb-3.font-weight-normal = "Event"
+      h1.h1.mb-3.font-weight-normal
+        = image_tag("http://www.geeklyinc.com/images/gc18/cal-banner-#{@event.category}.jpg", class: 'img-fluid border rounded w-50', alt: @event.category)
       - if current_user.id == @event.owner_id || current_user.admin
         .row
           .col-md-1
@@ -11,10 +12,9 @@
               method: :delete,
               data: { confirm: 'Are you sure you want to delete? This cannot be undone' }
       .row
-        .col-md-2 
-          strong Name:
-        .col-md-5
-    		  = "#{@event.name}"
+        .col-md-12
+          h2.h3.mb-3.font-weight-normal
+            = "#{@event.name}"
       .row
         .col-md-2
     			strong Owner:
