@@ -69,7 +69,7 @@ class Event < ApplicationRecord
   def owner_name
     @owner ||= User.where(id: owner_id)
     if !@owner.blank?
-      @owner.name
+      @owner.first.name
     else
       ''
     end
