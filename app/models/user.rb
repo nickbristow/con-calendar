@@ -30,7 +30,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
   has_many :events, through: :appointments
   def name
     if preffered_name.blank?

@@ -32,6 +32,10 @@ class Event < ApplicationRecord
     update(current_attendees: users.count)
   end
 
+  def max_attendee_count
+    max_attendees || 500
+  end
+
   def time_period
     if start_time && end_time
       "#{start_time.strftime('%I:%M%p')}-#{end_time.strftime('%I:%M%p')}"
@@ -60,5 +64,14 @@ class Event < ApplicationRecord
   def category_name
     cat_names = { game: 'Game', official_event: 'Geekly', outing: 'Outing', panel: 'Panel' }
     cat_names[category.to_sym]
+  end
+
+  def owner_name
+    @owner ||= User.where(id: owner_id)
+    if !@owner.blank?
+      @owner.name
+    else
+      ''
+    end
   end
 end

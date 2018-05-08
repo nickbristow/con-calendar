@@ -5,6 +5,14 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def destroy
+    events = Event.where(owner_id: current_user.id)
+    events.each do |event|
+      event.destroy!
+    end
+    super
+  end
+
   private
 
   def sign_up_params
