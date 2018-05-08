@@ -16,3 +16,6 @@ migrate_heroku:
 reset_pk:
 	bex rails c
 	ActiveRecord::Base.connection.tables.each { |t|     ActiveRecord::Base.connection.reset_pk_sequence!(t) }
+
+heroku_console:
+	heroku run rails console
