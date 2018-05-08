@@ -65,7 +65,7 @@ class EventsController < ApplicationController
   private
 
   def filter_events
-    Event.where(category: event_filter_categories).sort_by(&:start_time)
+    Event.where(category: event_filter_categories).order(:start_time)
   end
 
   def event_filter_categories
