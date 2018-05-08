@@ -31,7 +31,7 @@
     .col-md-1 
       span[title='number attending the panel']
         = "#{event.attendee_count}/#{event.max_attendees}"
-    .col-md-4 = event.description
+    .col-md-4 = event.description_md.html_safe
     .col-md-2 = render partial: 'shared/modify_attendee', locals: {event: event }
 
 

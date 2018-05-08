@@ -50,6 +50,8 @@ gem 'nokogiri', '~> 1.8.2'
 gem 'rails-html-sanitizer', '~> 1.0.4'
 gem 'cancancan', '~> 2.0'
 
+gem 'redcarpet'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'annotate', require: false
