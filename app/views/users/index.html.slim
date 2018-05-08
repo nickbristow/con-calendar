@@ -3,9 +3,13 @@
     .col-md-12
       h1.h1.mb-3.font-weight-normal Attendees
       ul.list-group
+        - is_admin = current_user.admin?
         - @users.each do |user|
           li.list-group-item
             strong = "#{user.name}"
             - unless user.twitter.blank?
               = " - "
               = link_to "twitter", "http://www.twitter.com/#{user.twitter}", target: "_blank", rel: "alternate"
+            - if is_admin
+              strong = "   --Only admin can see -->  "
+              = "Email: #{user.email}"
