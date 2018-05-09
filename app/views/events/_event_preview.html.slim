@@ -21,7 +21,8 @@
 /           td = render partial: 'shared/modify_attendee', locals: {event: event }
 - events.each do |event|
   - next unless event.date == event_date
-  .row[class="table-row-#{event.category} px1 py1 my1 border rounded", id="event-id-#{event.id}"]
+  .row[class="table-row-#{event.category} px1 py1 my1 border rounded calendar-preview-row" id=""]
+    a[id="event-id-#{event.id}" class="anchor"]
     .col-md-1 
       = image_tag("http://www.geeklyinc.com/images/gc18/icon-cal-#{event.category_name.downcase}.png", size: 40, alt: event.category_name)
     .col-md-2
