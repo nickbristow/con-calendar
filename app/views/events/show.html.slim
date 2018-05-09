@@ -2,50 +2,59 @@
   .row
     .col-md-12
       h1.h1.mb-3.font-weight-normal
-        = image_tag("http://www.geeklyinc.com/images/gc18/cal-banner-#{@event.category}.jpg", class: 'img-fluid border rounded w-50', alt: @event.category)
-      - if current_user.id == @event.owner_id || current_user.admin
-        .row
-          .col-md-1
-				    = link_to "Edit", edit_event_path(@event)
-          .col-md-2
-            = link_to 'Delete', event_path(@event),
-              method: :delete,
-              data: { confirm: 'Are you sure you want to delete? This cannot be undone' }
-      .row
-        .col-md-12
-          h2.h3.mb-3.font-weight-normal
-            = "#{@event.name}"
-      .row
-        .col-md-2
-    			strong Owner:
-        .col-md-5
-          = @event.owner_name
-      .row
-        .col-md-2
-          strong Location:
-        .col-md-5
-          = @event.location
-      .row
-        .col-md-2
-          strong Date:
-        .col-md-1
-        	= @event.date
-        .col-md-4
-        	= @event.time_period
-      .row
-        .col-md-2
-        	strong Description:
-        .col-md-8
-        	= @event.description_md.html_safe
-      .row
-        .col-md-2
-        	strong Attendees: 
-        .col-md-5
-        	= "#{@event.attendee_count}/#{@event.max_attendees}"
-      .row
-        .col-md-2
-        .col-md-5
-        	ul
-        		- @event.users.each do |user|
-        			li
-        				= user.name
+        = image_tag("http://www.geeklyinc.com/images/gc18/cal-banner-#{@event.category}.jpg", class: 'img-fluid border rounded w-75', alt: @event.category)
+  - if current_user.id == @event.owner_id || current_user.admin
+    .row
+      .col-md-1
+        = link_to "Edit", edit_event_path(@event)
+      .col-md-2
+        = link_to 'Delete', event_path(@event),
+          method: :delete,
+          data: { confirm: 'Are you sure you want to delete? This cannot be undone' }
+  .row
+    .col-md-9
+      .card
+        .card-header
+          = "#{@event.name}"
+        .card-body
+          .card-text
+            .row
+              .col-md-2
+                strong Owner:
+              .col-md-10
+                = @event.owner_name
+          .card-text
+            .row
+              .col-md-2
+                strong Location:
+              .col-md-10
+                = @event.location
+          .card-text
+            .row
+              .col-md-2
+                strong Date:
+              .col-md-10
+                = @event.date
+          .card-text
+            .row
+              .col-md-2
+              .col-md-10
+                strong
+                  = @event.time_period
+          .card-text
+            .row
+              .col-md-2
+                strong Description:
+              .col-md-10
+                = @event.description_md.html_safe
+          .card-text
+            .row
+              .col-md-2
+                strong Attendees:
+              .col-md-10
+                = "#{@event.attendee_count}/#{@event.max_attendees}"
+          .card-text
+            ul
+              - @event.users.each do |user|
+                li
+                  = user.name
