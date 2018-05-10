@@ -13,11 +13,13 @@ class EventsController < ApplicationController
 
   def my_events
     @current_path = events_my_calendar_path
-    @users_events = current_user.events
+    owned_events = Event.where(owner_id: current_user.id, category: event_filter_categories).order(:start_time)
+    @users_events = (
+      current_user.events.where(category: event_filter_categories).order(:start_time) +
+      owned_events
+    ).uniq
     @user_appointments = current_user.appointments
-    @events = filter_events.select do |e|
-      @users_events.include?(e) || e.owner_id == current_user.id
-    end
+    @events = @users_events
     render 'my_calendar'
   end
 
