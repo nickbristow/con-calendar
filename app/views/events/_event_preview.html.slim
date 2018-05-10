@@ -24,7 +24,7 @@
   .row[class="table-row-#{event.category} px1 py1 my1 border rounded calendar-preview-row" id=""]
     a[id="event-id-#{event.id}" class="anchor"]
     .col-md-1 
-      = image_tag("http://www.geeklyinc.com/images/gc18/icon-cal-#{event.category_name.downcase}.png", size: 40, alt: event.category_name)
+      = image_tag("https://www.geeklyinc.com/images/gc18/icon-cal-#{event.category_name.downcase}.png", size: 40, alt: event.category_name)
     .col-md-2
       strong = link_to event.name, event_path(event)
     .col-md-1 = event.time_period

@@ -2,7 +2,7 @@
   .row
     .col-md-12
       h1.h1.mb-3.font-weight-normal
-        = image_tag("http://www.geeklyinc.com/images/gc18/cal-banner-#{@event.category}.jpg", class: 'img-fluid border rounded w-75', alt: @event.category)
+        = image_tag("https://www.geeklyinc.com/images/gc18/cal-banner-#{@event.category}.jpg", class: 'img-fluid border rounded w-75', alt: @event.category)
   - if current_user.id == @event.owner_id || current_user.admin
     .row
       .col-md-1
