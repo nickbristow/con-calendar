@@ -2,6 +2,7 @@
 
 class EventsController < ApplicationController
   before_action :authenticate_user!
+  before_action :load_filter_params, only: [:index, :my_events]
   load_and_authorize_resource
 
   def index
@@ -66,16 +67,24 @@ class EventsController < ApplicationController
 
   private
 
+  def load_filter_params
+    @hide_full_games = filter_params[:hide_full_games].present?
+  end
+
+  def filter_params
+    params.permit(:official_event, :panel, :game, :outing, :hide_full_games)
+  end
+
   def filter_events
     Event.where(category: event_filter_categories).order(:start_time)
   end
 
   def event_filter_categories
     cat = []
-    cat.push('official_event') if params[:official_event]
-    cat.push('panel') if params[:panel]
-    cat.push('game') if params[:game]
-    cat.push('outing') if params[:outing]
+    cat.push('official_event') if filter_params[:official_event]
+    cat.push('panel') if filter_params[:panel]
+    cat.push('game') if filter_params[:game]
+    cat.push('outing') if filter_params[:outing]
     if cat.empty?
       ['official_event', 'panel', 'game', 'outing']
     else

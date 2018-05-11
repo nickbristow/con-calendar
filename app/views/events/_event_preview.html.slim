@@ -1,26 +1,7 @@
-/ .table-responsive
-/   table.table
-/     thead.thead-dark
-/       tr
-/         th Time
-/         th Event Name
-/         th.hide-column Category
-/         th.hide-column Attendees
-/         th.hide-column Description
-/         th
-/     tbody
-/       - events.each do |event|
-/         - next unless event.date == event_date
-/         tr[class="table-row-#{event.category}", id="event-id-#{event.id}"]
-/           td = event.time_period
-/           td 
-/             strong = link_to event.name, event_path(event)
-/           td.hide-column = event.category
-/           td.hide-column = "#{event.attendee_count}/#{event.max_attendees}"
-/           td.hide-column = event.description
-/           td = render partial: 'shared/modify_attendee', locals: {event: event }
 - events.each do |event|
   - next unless event.date == event_date
+  - @my_event = @users_events.find { |e| e.id == event.id } || event.owner_id == current_user.id
+  - next if !@my_event && @hide_full_games && event.category == 'game' && event.attendee_count >= event.max_attendee_count
   .row[class="table-row-#{event.category} px1 py1 my1 border rounded calendar-preview-row" id=""]
     a[id="event-id-#{event.id}" class="anchor"]
     .col-md-1 

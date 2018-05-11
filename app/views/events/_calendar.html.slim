@@ -3,7 +3,7 @@
     = link_to 'Create event', new_event_path, class: "btn btn-sm btn-primary btn-block"
 = form_tag(@current_path, method: :get) do |f|
   .row.my1
-    .col-md-6
+    .col-md-8
       .form-check.form-check-inline
         = check_box_tag 'official_event', '1', params[:official_event] == "1", class: 'form-check-input'
         = label_tag 'official_event', 'Official Event', class: 'form-check-label' do
@@ -24,6 +24,10 @@
         = label_tag 'game', 'Game', class: 'form-check-label' do
           = image_tag("https://www.geeklyinc.com/images/gc18/icon-cal-game.png", size: 20, alt: "")
           = " Game"
+      .form-check.form-check-inline
+        = check_box_tag 'hide_full_games', '1', params[:hide_full_games] == "1", class: 'form-check-input'
+        = label_tag 'hide_full_games', 'Hide full games', class: 'form-check-label' do
+          = "Hide full games"
   .row
     .col-md-2
       = button_tag "Filter", class: "btn btn-sm btn-primary btn-block"
@@ -31,17 +35,17 @@
 hr
 .row.my2
   .col-md-6
-    h2.h2.mb-3.font-weight-normal July 19, 2018
+    h2.h2.mb-3.font-weight-normal Thursday, July 19, 2018
 = render partial: 'event_preview', :locals => {events: @events, event_date: '07/19/18'}
 .row.my2
   .col-md-6
-    h2.h2.mb-3.font-weight-normal July 20, 2018
+    h2.h2.mb-3.font-weight-normal Friday, July 20, 2018
 = render partial: 'event_preview', :locals => {events: @events, event_date: '07/20/18'}
 .row.my2
   .col-md-6
-    h2.h2.mb-3.font-weight-normal July 21, 2018
+    h2.h2.mb-3.font-weight-normal Saturday, July 21, 2018
 = render partial: 'event_preview', :locals => {events: @events, event_date: '07/21/18'}
 .row.my2
   .col-md-6
-    h2.h2.mb-3.font-weight-normal July 22, 2018
+    h2.h2.mb-3.font-weight-normal Sunday, July 22, 2018
 = render partial: 'event_preview', :locals => {events: @events, event_date: '07/22/18'}
