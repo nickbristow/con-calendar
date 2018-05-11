@@ -15,7 +15,7 @@
           = f.input :category, :collection => Event.event_categories(current_user), input_html:{ class: 'form-control'}
       .row.my-2
         .col-md-5
-          = f.input :location, input_html: { class: 'form-control' }
+          = f.input :location, input_html: { value: f.object.location || 'Gameroom', class: 'form-control' }
       .row.my-2
         .col-md-5
           = f.input :date, :collection => [["July 19, 2018", "07/19/18"], ["July 20, 2018", "07/20/18"], ["July 21, 2018", "07/21/18"], ["July 22, 2018", "07/22/18"]]
