@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :events
   resources :appointments
 
+  match "*path" => redirect("/"), via: [:get]
+
   # devise_for :users, controllers: {
   #   sessions: 'users/sessions'
   # }
