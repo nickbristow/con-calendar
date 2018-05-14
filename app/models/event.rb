@@ -22,7 +22,7 @@ class Event < ApplicationRecord
   validates :date, presence: true
   validates :category, presence: true
   validates :location, presence: true
-  validates :max_attendees, numericality: { only_integer: true, greater_than: 1, less_than_or_equal_to: 500 }
+  validates :max_attendees, numericality: { only_integer: true, greater_than: 1, less_than_or_equal_to: 500 }, presence: true
   validates :start_time, presence: true
   validates :end_time, presence: true
 
