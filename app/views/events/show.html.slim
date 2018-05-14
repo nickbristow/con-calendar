@@ -15,7 +15,11 @@
     .col-md-9
       .card
         .card-header
-          strong = "#{@event.name}"
+          .row
+            .col-md-9
+              strong = "#{@event.name}"
+            .col-md-3
+              = render partial: 'shared/modify_attendee', locals: {event: @event }
         .card-body
           .card-text
             .row
