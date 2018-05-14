@@ -58,3 +58,6 @@
               - @event.users.each do |user|
                 li
                   = user.name
+                  - unless user.twitter.blank?
+                    = " - "
+                    = link_to "twitter", "http://www.twitter.com/#{user.twitter}", target: "_blank", rel: "alternate"
