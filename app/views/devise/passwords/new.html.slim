@@ -4,6 +4,12 @@
       h1.h3.mb-3.font-weight-normal Forgot your password?
   .row
     .col-md-6
+      p
+        strong
+          | Please Note: 
+        | Registering for Geeklycon does not automatically register you for the calendar. Please create an account using the "Sign Up" button if you haven't done so yet.
+  .row
+    .col-md-6
       = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
         = f.error_notification
         .row.my1
