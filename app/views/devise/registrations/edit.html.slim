@@ -17,10 +17,10 @@
                   Currently waiting confirmation for: <%= resource.unconfirmed_email %>
           .row
             .col-md-10
-              = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, input_html: {class: 'form-control'}
+              = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, input_html: {class: 'form-control'}, label: 'New password'
           .row
             .col-md-10
-              = f.input :password_confirmation, required: false, input_html: {class: 'form-control'}
+              = f.input :password_confirmation, required: false, input_html: {class: 'form-control'}, label: 'Confirm new password'
           .row
             .col-md-10
               = f.input :current_password, hint: "we need your current password to confirm your changes", required: true, input_html: {class: 'form-control'}
