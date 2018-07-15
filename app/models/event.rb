@@ -82,4 +82,9 @@ class Event < ApplicationRecord
       ''
     end
   end
+
+  def day_of_week
+    days = %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday)
+    days[Date.strptime(date, '%m/%d/%y').wday]    
+  end
 end
