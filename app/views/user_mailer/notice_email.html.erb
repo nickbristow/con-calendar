@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body style="margin: 0px 100px 0px 100px ; padding: 0px 100px 0px 100px;">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="center">
+            <%= image_tag("https://www.geeklyinc.com/images/gc18/gclogo.jpg", alt: "Geekly con") %>
+        </td>
+    </tr>
+    </table>
+    <%= Event.markdown.render(@body).html_safe %>
+
+    <% if @day == "ALL" %>
+      <h2>Your Schedule:</h2>
+    <% else %>
+      <h2>Your <%= @day %> Schedule:</h2>
+    <% end %>
+    <% @events.each do |event| %>
+      <h3>
+        <%= image_tag("https://www.geeklyinc.com/images/gc18/icon-cal-#{event.category_name.downcase}.png", size: 40, alt: event.category_name) %>
+        <%= link_to(event.name, event_url(event)) %>    
+      </h3>
+      <p>
+        <%= event.date %><br />
+        <%= event.time_period %><br />
+        <%= event.location %>
+        <%= event.description_md.html_safe %>
+      </p>
+      <hr />
+    <% end %>
+    <p><%= link_to('To unsubscribe from these emails, please delete your account', edit_user_registration_url(@user)) %></p>
+  </body>
+</html>

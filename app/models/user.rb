@@ -39,4 +39,9 @@ class User < ApplicationRecord
       preffered_name
     end
   end
+
+  def all_events
+    joined_events = events.pluck(:id)
+    Event.where('owner_id=? OR id IN (?)', id, joined_events).order(date: :asc, start_time: :asc)
+  end
 end
