@@ -3,6 +3,7 @@
   .row
     .col-md-12
       - if is_admin
+        = ENV["REDISTOGO_URL"]
         h1.h1.mb-3.font-weight-normal Admins
         ul.list-group
         - @users.where(admin: true).each do |user|
