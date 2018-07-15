@@ -6,7 +6,7 @@ class EmailCalendarController < ApplicationController
     puts '****emailed'
     @user = User.find(params[:id])
     if @user
-      UserMailer.notice_email(@user, 'Your GeeklyCon Schedule', '', get_users_events(@user), 'ALL').deliver_now
+      UserMailer.notice_email(@user, 'GeeklyCon Schedule', '', get_users_events(@user), 'ALL').deliver_now
     end
     redirect_to :back
   end
