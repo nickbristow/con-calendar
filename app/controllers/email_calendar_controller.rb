@@ -24,7 +24,7 @@ class EmailCalendarController < ApplicationController
         user,
         @email_all_params[:subject],
         @email_all_params[:email_body],
-        @events,
+        events,
         @email_all_params[:day]
       )
       mail.deliver_later
