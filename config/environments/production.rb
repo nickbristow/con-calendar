@@ -85,7 +85,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
+  config.active_job.queue_adapter = :sidekiq
   config.action_mailer.default_url_options = { host: 'https://geekly-con-calendar.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {

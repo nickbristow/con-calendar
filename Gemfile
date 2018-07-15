@@ -53,6 +53,7 @@ gem 'rails-html-sanitizer', '~> 1.0.4'
 gem 'newrelic_rpm'
 gem 'raygun4ruby'
 gem 'redcarpet'
+gem 'sidekiq'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
