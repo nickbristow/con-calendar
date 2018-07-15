@@ -7,7 +7,7 @@
     = f.button :submit, "Remove me", class: "btn btn-sm btn-danger btn-block"
 - elsif event.attendee_count >= event.max_attendee_count
   - if event.category != 'game'
-    = content_tag :div, "Event full", class: "disabled btn btn-sm btn-light btn-block", "data-toggle"=>"tooltip", "data-placement"=>"top", title: "This event is full, but all events are first come first serve."
+    = content_tag :div, "Event full", class: "disabled btn btn-sm btn-light btn-block", "data-toggle"=>"tooltip", "data-placement"=>"top", title: "This event is full, but all offical events and panels are first come first serve."
   - else
     = content_tag :div, "Event full", class: "disabled btn btn-sm btn-light btn-block"
 - else
