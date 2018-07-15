@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class EmailCalendarController < ApplicationController
   def email_to
     return unless current_user.admin?
     puts '****emailed'
     @user = User.find(params[:id])
     if @user
-      UserMailer.notice_email(@user, 'schedule','', get_users_events(@user), 'ALL').deliver_later
+      UserMailer.notice_email(@user, 'schedule', '', get_users_events(@user), 'ALL').deliver_later
     end
     redirect_to :back
   end
@@ -27,13 +29,16 @@ class EmailCalendarController < ApplicationController
     end
     redirect_to :back
   end
+
   def index; end
 
   private
-  def get_users_events(user, day='ALL')
-    return user.all_events if (day == 'ALL')
+
+  def get_users_events(user, day = 'ALL')
+    return user.all_events if day == 'ALL'
     user.all_events.where(date: day)
   end
+
   def email_all_params
     params.require(:email).permit(:day, :subject, :email_body)
   end

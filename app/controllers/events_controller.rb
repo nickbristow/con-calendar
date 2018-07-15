@@ -2,7 +2,7 @@
 
 class EventsController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_filter_params, only: [:index, :my_events]
+  before_action :load_filter_params, only: %i[index my_events]
   load_and_authorize_resource
 
   def index
@@ -89,7 +89,7 @@ class EventsController < ApplicationController
     cat.push('game') if filter_params[:game]
     cat.push('outing') if filter_params[:outing]
     if cat.empty?
-      ['official_event', 'panel', 'game', 'outing']
+      %w[official_event panel game outing]
     else
       cat
     end
