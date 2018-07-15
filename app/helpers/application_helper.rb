@@ -4,7 +4,7 @@ module ApplicationHelper
   def active_page_class(page_path)
     return 'active' if current_page?(page_path)
   end
-  
+
   def event_dates
     @event_dates ||= [
       {
@@ -26,13 +26,13 @@ module ApplicationHelper
     return html if html.length <= length
     partial = html[0..length]
     malformed_tag = partial.rindex(/<\w(?!\w+>)/)
-    partial = partial[0..malformed_tag-1] if malformed_tag
+    partial = partial[0..malformed_tag - 1] if malformed_tag
     opening_tags = partial.scan(/<\w+>/)
     closing_tags = partial.scan(/<\/\w+>/)
-    opening_tags.map!{|t| t.insert(1, '/')}
+    opening_tags.map! { |t| t.insert(1, '/') }
     missing_tags = opening_tags - closing_tags
     missing_tags.reverse.each do |tag|
-      partial = partial + tag
+      partial += tag
     end
     partial.insert(partial.rindex(/<\/p>/), append_text)
   end

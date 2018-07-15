@@ -7,9 +7,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def destroy
     events = Event.where(owner_id: current_user.id)
-    events.each do |event|
-      event.destroy!
-    end
+    events.each(&:destroy!)
     super
   end
 

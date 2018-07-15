@@ -13,3 +13,4 @@
             - if is_admin
               strong = "   --Only admin can see -->  "
               = "Email: #{user.email}"
+              = link_to "Email Schedule", email_to_path(user.id)
