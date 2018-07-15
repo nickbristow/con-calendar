@@ -6,7 +6,7 @@ class EmailCalendarController < ApplicationController
     puts '****emailed'
     @user = User.find(params[:id])
     if @user
-      UserMailer.notice_email(@user, 'schedule', '', get_users_events(@user), 'ALL').deliver_later
+      UserMailer.notice_email(@user, 'schedule', '', get_users_events(@user), 'ALL').deliver_now
     end
     redirect_to :back
   end
@@ -25,7 +25,7 @@ class EmailCalendarController < ApplicationController
         @email_all_params[:email_body],
         events,
         @email_all_params[:day]
-      ).deliver_later
+      ).deliver_now
     end
     redirect_to :back
   end
