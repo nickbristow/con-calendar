@@ -6,7 +6,8 @@ class EmailCalendarController < ApplicationController
     puts '****emailed'
     @user = User.find(params[:id])
     if @user
-      UserMailer.notice_email(@user, 'GeeklyCon Schedule', '', get_users_events(@user), 'ALL').deliver_later
+      mail = UserMailer.notice_email(@user, 'GeeklyCon Schedule', '', get_users_events(@user), 'ALL')
+      mail.deliver_later
     end
     redirect_to :back
   end
@@ -19,13 +20,14 @@ class EmailCalendarController < ApplicationController
     return unless current_user.admin?
     User.all.each do |user|
       events = get_users_events(user, @email_all_params[:day])
-      UserMailer.notice_email(
+      mail = UserMailer.notice_email(
         user,
         @email_all_params[:subject],
         @email_all_params[:email_body],
-        events,
+        @events,
         @email_all_params[:day]
-      ).deliver_later
+      )
+      mail.deliver_later
     end
     redirect_to :back
   end
@@ -35,8 +37,16 @@ class EmailCalendarController < ApplicationController
   private
 
   def get_users_events(user, day = 'ALL')
-    return user.all_events if day == 'ALL'
-    user.all_events.where(date: day)
+    if day == 'ALL'
+      events = user.all_events
+    else
+      events = user.all_events.where(date: day)
+    end
+    format_user_events(events)
+  end
+
+  def format_user_events events
+    render_to_string partial: 'email_calendar/email_events', locals: {events: events}
   end
 
   def email_all_params
