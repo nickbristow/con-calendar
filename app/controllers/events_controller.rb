@@ -80,7 +80,7 @@ class EventsController < ApplicationController
   end
 
   def filter_events
-    Event.where(category: event_filter_categories).order(:start_time)
+    Event.where(category: event_filter_categories).order(:start_time).order(:id)
   end
 
   def event_filter_categories
