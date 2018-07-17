@@ -26,6 +26,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.includes(:users).find(params[:id])
+    @event.update_attendee_count
     @users_events = current_user.events
     @user_appointments = current_user.appointments
     @my_event = @users_events.find { |e| e.id == @event.id } || @event.owner_id == current_user.id
