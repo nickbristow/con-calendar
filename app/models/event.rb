@@ -70,7 +70,7 @@ class Event < ApplicationRecord
   end
 
   def self.internal_markdown
-    @renderer ||= Redcarpet::Render::HTML.new(hard_wrap: true, no_images: true, filter_html: true)
+    @renderer ||= Redcarpet::Render::HTML.new(no_links: false, hard_wrap: true, no_images: true, filter_html: false)
     @markdown ||= Redcarpet::Markdown.new(@renderer)
   end
 
