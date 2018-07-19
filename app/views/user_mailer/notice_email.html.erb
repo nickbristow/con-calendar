@@ -11,7 +11,7 @@
         </td>
     </tr>
     </table>
-    <%= Event.markdown.render(@body).html_safe %>
+    <%= Event.internal_markdown.render(@body).html_safe %>
 
     <% if @day == "ALL" %>
       <h2>Your Schedule:</h2>

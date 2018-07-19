@@ -9,6 +9,7 @@
         = f.input :subject, as: :text,  input_html: {class: 'form-control', required: true}
         = f.input :email_body, as: :text,  input_html: {class: 'form-control', required: true}
         = f.input :day, :collection => [["July 19, 2018", "07/19/18"], ["July 20, 2018", "07/20/18"], ["July 21, 2018", "07/21/18"], ["July 22, 2018", "07/22/18"], ['ALL','ALL']], input_html: {required: true}
+        = f.input :admin_only, :collection => [["true", "true"], ["false","false"]]
 
 
         = f.button :submit, "Send email to ALL USERS", class: "btn btn-lg btn-primary btn-block", data: { confirm: 'Are you sure you want to email all users!?' }

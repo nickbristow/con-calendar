@@ -69,6 +69,11 @@ class Event < ApplicationRecord
     @markdown ||= Redcarpet::Markdown.new(@renderer)
   end
 
+  def self.internal_markdown
+    @renderer ||= Redcarpet::Render::HTML.new(hard_wrap: true, no_images: true, filter_html: true)
+    @markdown ||= Redcarpet::Markdown.new(@renderer)
+  end
+
   def category_name
     cat_names = { game: 'Game', official_event: 'Geekly', outing: 'Outing', panel: 'Panel' }
     cat_names[category.to_sym]

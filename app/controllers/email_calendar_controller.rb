@@ -18,7 +18,12 @@ class EmailCalendarController < ApplicationController
     return unless @email_all_params[:day]
     return unless @email_all_params[:subject]
     return unless current_user.admin?
-    User.all.each do |user|
+    if @email_all_params[:admin_only] == "false"
+      users = User.all
+    else
+      users = User.where(admin: true)
+    end
+    users.all.each do |user|
       events = get_users_events(user, @email_all_params[:day])
       mail = UserMailer.notice_email(
         user,
@@ -50,6 +55,6 @@ class EmailCalendarController < ApplicationController
   end
 
   def email_all_params
-    params.require(:email).permit(:day, :subject, :email_body)
+    params.require(:email).permit(:day, :subject, :email_body, :admin_only)
   end
 end
