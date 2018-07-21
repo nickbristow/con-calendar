@@ -19,7 +19,7 @@ class EventsController < ApplicationController
     #   current_user.events.where(category: event_filter_categories).order(:start_time) +
     #   owned_events
     # ).uniq
-    # @user_appointments = current_user.appointments
+    @user_appointments = current_user.appointments
     # @events = @users_events
     @events = current_user.all_events
     @users_events = @events
