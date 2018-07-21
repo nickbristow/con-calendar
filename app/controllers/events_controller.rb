@@ -14,13 +14,14 @@ class EventsController < ApplicationController
 
   def my_events
     @current_path = events_my_calendar_path
-    owned_events = Event.where(owner_id: current_user.id, category: event_filter_categories).order(:start_time)
-    @users_events = (
-      current_user.events.where(category: event_filter_categories).order(:start_time) +
-      owned_events
-    ).uniq
-    @user_appointments = current_user.appointments
-    @events = @users_events
+    # owned_events = Event.where(owner_id: current_user.id, category: event_filter_categories).order(:start_time)
+    # @users_events = (
+    #   current_user.events.where(category: event_filter_categories).order(:start_time) +
+    #   owned_events
+    # ).uniq
+    # @user_appointments = current_user.appointments
+    # @events = @users_events
+    @events = current_user.all_events
     render 'my_calendar'
   end
 
