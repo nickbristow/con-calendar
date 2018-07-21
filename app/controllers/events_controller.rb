@@ -22,6 +22,7 @@ class EventsController < ApplicationController
     # @user_appointments = current_user.appointments
     # @events = @users_events
     @events = current_user.all_events
+    @users_events = @events
     render 'my_calendar'
   end
 
