@@ -46,7 +46,7 @@ class Event < ApplicationRecord
 
   def time_period
     if start_time && end_time
-      "#{start_time.strftime('%I:%M%p')}-#{end_time.strftime('%I:%M%p')}"
+      "#{day_of_week} <strong>#{start_time.strftime('%I:%M%p')}-#{end_time.strftime('%I:%M%p')}</strong>".html_safe
     else
       ''
     end
