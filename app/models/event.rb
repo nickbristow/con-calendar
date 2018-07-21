@@ -75,6 +75,7 @@ class Event < ApplicationRecord
   end
 
   def category_name
+    return 'Game' if category.blank?
     cat_names = { game: 'Game', official_event: 'Geekly', outing: 'Outing', panel: 'Panel' }
     cat_names[category.to_sym]
   end
