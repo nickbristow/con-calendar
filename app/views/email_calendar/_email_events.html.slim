@@ -3,7 +3,7 @@
     = image_tag("https://www.geeklyinc.com/images/gc18/icon-cal-#{event.category_name.downcase}.png", size: 40, alt: event.category_name)
     = link_to(event.name, event_url(event))
   p
-    = "#{event.day_of_week} - #{event.date}"
+    = "#{event.date}"
     br
     = event.time_period
     br
