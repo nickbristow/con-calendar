@@ -78,7 +78,7 @@ class EventsController < ApplicationController
   end
 
   def filter_params
-    params.permit(:official_event, :panel, :game, :outing, :hide_full_games)
+    params.permit(:official_event, :panel, :game, :outing, :hide_full_games, :show_past_events)
   end
 
   def filter_events
