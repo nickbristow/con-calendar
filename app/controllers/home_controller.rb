@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  def index; end
+  def index
+    if user_signed_in?
+      redirect_to events_path
+    else
+      redirect_to user_session_path
+    end
+  end
 end

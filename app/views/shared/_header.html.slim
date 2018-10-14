@@ -6,16 +6,17 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
     ul.navbar-nav.mr-auto
       - if user_signed_in?
         li[class="nav-item #{active_page_class(events_path)}"]
-          = link_to "Calendar", events_path(hide_full_games: 1), class: 'nav-link'
+          = link_to "Schedule", events_path(hide_full_games: 1), class: 'nav-link'
         li[class="nav-item #{active_page_class(events_my_calendar_path)}"]
-          = link_to "My calendar", events_my_calendar_path, class: 'nav-link'
-        li[class="nav-item #{active_page_class(users_path)}"]
-          = link_to "View users", users_path, class: 'nav-link'
+          = link_to "My schedule", events_my_calendar_path, class: 'nav-link'
+        - if current_user.admin?
+          li[class="nav-item #{active_page_class(users_path)}"]
+            = link_to "View users (admin only)", users_path, class: 'nav-link'
         li[class="nav-item #{active_page_class(edit_user_registration_path)}"]
           = link_to "Edit profile", edit_user_registration_path, class: 'nav-link'
         - if current_user.admin?
           li[class="nav-item #{active_page_class(email_calendar_path)}"]
-            = link_to "Email Schedule", email_calendar_path, class: 'nav-link'
+            = link_to "Email Schedule (admin only)", email_calendar_path, class: 'nav-link'
     .form-inline.my-2.my-lg-0
       - if !user_signed_in?
         = link_to "Sign Up", new_user_registration_path, class: 'btn btn-outline-light my-2 my-sm-0 mx-1'

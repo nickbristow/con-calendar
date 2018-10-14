@@ -30,6 +30,13 @@ class Event < ApplicationRecord
   has_many :users, through: :appointments
   attr_accessor :start_time_hour, :end_time_hour, :start_time_minute, :end_time_minute, :end_time_hour, :end_time_am_pm, :start_time_am_pm
 
+  # scope :hide_full_games -> {(where('max_attendees<current_attendees'))}
+  scope :official_event, -> {(where(category: 'official_event'))}
+  scope :panel, -> {(where(category: 'panel'))}
+  scope :game, -> {(where(category: 'game'))}
+  scope :outing, -> {(where(category: 'outing'))}
+  # https://www.sitepoint.com/dynamically-chain-scopes-to-clean-up-large-sql-queries/
+
   def attendee_count
     return current_attendees unless current_attendees.nil?
     update(current_attendees: users.count)
@@ -92,5 +99,9 @@ class Event < ApplicationRecord
   def day_of_week
     days = %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday)
     days[Date.strptime(date, '%m/%d/%y').wday]    
+  end
+
+  def self.send_chain(methods)
+    methods.inject(self, :send)
   end
 end
