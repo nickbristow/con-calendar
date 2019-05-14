@@ -35,7 +35,7 @@ class Event < ApplicationRecord
   scope :panel, -> {(where(category: 'panel'))}
   scope :game, -> {(where(category: 'game'))}
   scope :outing, -> {(where(category: 'outing'))}
-  scope :hide_past_events, -> {(where('date !~* ?', '18'))}
+  # scope :hide_past_events, -> {(where('date !~* ?', '18'))}
   # https://www.sitepoint.com/dynamically-chain-scopes-to-clean-up-large-sql-queries/
 
   def attendee_count

@@ -91,12 +91,12 @@ class EventsController < ApplicationController
   end
 
   def category_params
-    if params[:show_past_events]
+    # if params[:show_past_events]
       params.permit(:official_event, :panel, :game, :outing).to_h.keys
-    else
-      keys = params.permit(:official_event, :panel, :game, :outing).to_h.keys
-      keys.push(:hide_past_events)
-    end
+    # else
+    #   keys = params.permit(:official_event, :panel, :game, :outing).to_h.keys
+    #   keys.push(:hide_past_events)
+    # end
   end
 
   def event_filter_categories

@@ -28,10 +28,10 @@
         = check_box_tag 'hide_full_games', '1', params[:hide_full_games] == "1", class: 'form-check-input'
         = label_tag 'hide_full_games', 'Hide full games', class: 'form-check-label' do
           = "Hide full games"
-      .form-check.form-check-inline
-        = check_box_tag 'show_past_events', '1', params[:show_past_events] == "1", class: 'form-check-input'
-        = label_tag 'show_past_events', 'Show past events', class: 'form-check-label' do
-          = "Show past events"
+      / .form-check.form-check-inline
+      /   = check_box_tag 'show_past_events', '1', params[:show_past_events] == "1", class: 'form-check-input'
+      /   = label_tag 'show_past_events', 'Show past events', class: 'form-check-label' do
+      /     = "Show past events"
   .row
     .col-md-2
       = button_tag "Filter", class: "btn btn-sm btn-primary btn-block"
