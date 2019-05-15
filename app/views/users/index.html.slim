@@ -7,7 +7,7 @@
         ul.list-group
         - @users.where(admin: true).each do |user|
           li.list-group-item
-            strong = "User ID: #{user.id}"
+            strong = "User ID: #{user.id} "
             strong = "User Name: #{user.name}"
             - unless user.twitter.blank?
               = " - "
