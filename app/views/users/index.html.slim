@@ -7,8 +7,10 @@
         ul.list-group
         - @users.where(admin: true).each do |user|
           li.list-group-item
-            strong = "User ID: #{user.id} "
-            strong = "User Name: #{user.name}"
+            strong = "ID: "
+            span = "#{user.id} "
+            strong = "Name: "
+            span = "#{user.name}"
             - unless user.twitter.blank?
               = " - "
               = link_to "twitter", "http://www.twitter.com/#{user.twitter}", target: "_blank", rel: "alternate"
@@ -20,7 +22,10 @@
       ul.list-group
         - @users.each do |user|
           li.list-group-item
-            strong = "#{user.name}"
+            strong = "ID: "
+            span = "#{user.id} "
+            strong = "Name: "
+            span = "#{user.name}"
             - unless user.twitter.blank?
               = " - "
               = link_to "twitter", "http://www.twitter.com/#{user.twitter}", target: "_blank", rel: "alternate"
