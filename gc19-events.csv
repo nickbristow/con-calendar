@@ -1,20 +1,50 @@
 owner_id,name,date,category,start_time,end_time,description,max_attendees,location
-1,Live Show,07/20/18,official_event,7:00 PM,10:00 PM,All your favorite shows!,500,
-2,Nick Runs an RPG,07/21/18,game,3:00 PM,4:00 PM,Nick is going to run an RPG,6,Game room
-1,The Zoo,07/21/18,outing,4:00 PM,9:00 PM,The world famous columbus zoo. Meet in the lobby at 3pm,500,Columbus Zoo
-3,I love podcasting,07/22/18,panel,11:00 AM,1:00 PM,"I michael, like podcasting",50,Panel Room A
-3,Yer a Wizard Harry Live,07/21/18,panel,11:00 AM,12:00 PM,Watch Quizzich live!,100,Panel Room A
-1,Building a Pidcast,07/20/18,panel,10:00 AM,11:00 AM,A discussion of how they built their version of a podcast.,100,Panel Room A
-1,Sugoi Corp. Live Show,07/20/18,panel,11:00 AM,12:00 PM,Come watch a panel of weaboos create the word's latest and greatest anime series based on submissions from listeners!,100,Panel Room A
-4,Editing Video and Audio,07/20/18,panel,1:00 PM,2:00 PM,Take a deep dive with GeeklyInc editor David Stewart Into some of the challenges associated with editing both video and audio.  This will be an educational experience mixed with entertainment from both GeeklyInc and David’s own productions.  Prepare to laugh and learn. Q&A at the end...,100,Panel Room A
-1,GeeklyCommune 2,07/20/18,panel,2:00 PM,3:00 PM,It's Back and It's Pissed. Lets solve every problem.,100,Panel Room A
-5,PFS @ GeeklyCon,07/21/18,game,10:00 AM,11:00 AM,Let's run some Pathfinder Society tables at GeeklyCon! Some fun Society games before PFS 1.0 disappears in 2019! ,25,Panel Room B
-1,Better Know A Geekly Live!,07/21/18,panel,1:00 PM,2:00 PM,"It’s the third annual Libe BKAG! Come watch Matthew make a fool of himself while he interviews some of your favorite members of the community. Sometimes it’s funny, sometimes it’s real, sometimes we search for the real cause of 9/11. This won’t interfere with karaoke (probably).",100,Panel Room A
-6,GLBB’s Golden Lemon Bubble Butt 2018,07/21/18,panel,2:00 PM,3:00 PM,"Join us for our annual listener-submitted smut competition! You’re bound to have a laugh, a groan, and possibly even...a moan. (18+ only)",100,Panel Room A
-1,Circus Village,07/21/18,panel,3:00 PM,4:00 PM,"Part unrecorded live show of an unreleased podcast, part interactive game show where the biggest prize might just be the friends you lose along the way, part man, part machine, all cop.",100,Panel Room A
-7,The Stranger Lands Podcast Live Show,07/21/18,panel,4:00 PM,5:00 PM,The Stranger Lands Live!!! A live recording of an episode of TSL. Content is TBA. It might be a Q&A session. It might be story content. Who knows? We don’t. ,100,Panel Room A
-8,Phil's Cheeto and Compliment Hour,07/22/18,panel,10:00 AM,11:00 AM,"I will eat Cheetos. One by one you all will come to the microphone and compliment me. I can choose not to eat Cheetos, you must continue to compliment me for the full hour. ",100,Panel Room A
-1,Sacred Cows Tonight Presents: Supreme Court of Moovies,07/22/18,panel,11:00 AM,12:00 PM,"In the media justice system, movie based offenses are considered especially heinous. At Sacred Cows Tonight, the dedicated reviewers who investigate these vicious felonies are members of an elite court known as the Supreme Court of Moovies. These are their stories.
+15,Jasper's Dropmix,07/18/19,panel,6:30 PM,7:00 PM,Dropmix is a rhythm card game developed by Hasbro that allows players to remix parts of popular songs together to create awesome mashups. Come listen as Adam Bash creates music in the game's Freestyle mode around card suggestions from the audience.,100,Panel Room A
+1,Karaoke,07/18/19,official_event,7:30 PM,11:59 PM,Karaoke Fun times,500,Panel Room A
+1,Kick off party,07/19/19,official_event,7:30 PM,11:00 PM,Join us for food and drinks as we celbrate another Geeklycon!,500,Pool
+218,Wintercrest: Supernatural Dating Game,07/19/19,panel,10:00 AM,11:00 AM,Join the hosts of Wintercrest Podcast as they vie for the attention of your favorite NPCs from Season 2. Set in the style of the 60's Dating Game.,100,Panel Room B
+1,Transformation Sequence Live!,07/19/19,panel,11:00 AM,1:00 PM,Do you like strange tales from history? Are you interested in Japan? Do you enjoy watching Ben and Kym torment Vince while he tries to speak over their horrid jeers and cackles? Well come on down and have some fun as we record a very special live episode of Transformation Sequence where we learn weird stuff about anime history!,100,Panel Room B
+3,potterpod live,07/19/19,panel,1:00 PM,2:00 PM,10 points for Gryfindor!,100,Panel Room B
+3,drinks and daggers,07/19/19,panel,2:00 PM,3:00 PM,The official GAP card game.,100,Panel Room B
+18,Inside the Podcaster's Studio: Nika Howard and Adam Bash,07/19/19,panel,3:00 PM,4:00 PM,"Where did your favorite podcaster's creativity come from? What or who inspires them? How do they come up with...any of it? What makes them laugh? Learn more about two of your favorite podcasters, take a peek inside their process, and have a little fun along the way. At the end, our guests will of course answer ""The Pivot Questionnaire"". Won't you join us?",100,Panel Room B
+15,LaserHammer II,07/19/19,panel,4:00 PM,5:00 PM,"Laurel and Hardy. Abbott and Costello. Kid and Play. All of history's greatest comedy duos got their start in the same place: performing a panel at a board game and podcasting convention. 
 
-Featuring: Mike, Pete, and Adam Bash as Judges, Matthew Morris as Prosecutor/Defender, and Eli Ramsey as Bailiff, and other surprises.",100,Panel Room A
-5,Jack and Tori Rate Animals,07/22/18,panel,1:00 PM,2:00 PM,"Jack and Tori became friends due to one factor: their intense hatred of a dumb animal. Come join them as they talk about animals both great and terrible, rating them as they go, including submissions from others. Note: if you submit The Worst Frog, Jack will throw you into the sun.",100,Panel Room A
+Experience Ray and Bash's comedic chemistry first hand as they try to top last year's panel, rated Best Panel of 2018 by somebody... probably. 
+
+WARNING: This much friendship is not for the faint of heart.",100,Panel Room B
+223,D&D Character Creation Workshop,07/19/19,panel,10:00 AM,11:00 AM,Hmmm missing,100,Panel Room A
+3,So this is your first geeklycon,07/19/19,panel,11:00 AM,12:00 PM,Learn the ropes of geeklycon from the people who make it.,100,Panel Room A
+11,"Editing, Videography, and Action",07/19/19,panel,12:00 PM,1:00 PM,"DnDpodcast editor David (@spudcam) discusses the art of producing and editing audio, video, and action-related scenes for micro-budget projects.  This will be a fun-filled educational experience that will include audience participation.  Watch as David and audience members create and film scenes right before your eyes.  (The footage shot during the panel will be made available for all attendees before GeeklyCon 2019 is over!) ",100,Panel Room A
+11,RPG Campaign Creation 101,07/19/19,panel,1:00 PM,2:00 PM,"Is it a one shot?  Is it a mega-adventure?  Lets talk about creating a game.  
+Do you over prepare or under prepare...HOW do you to prepare?  This panel will be a discussion setting full of hints and tips for new and/or experienced GMs/DMs.  ",100,Panel Room A
+1,Intro to Improv (For Gamers),07/19/19,panel,2:00 PM,4:00 PM,"
+Spice up your podcast recording, have more fun at DnD, and wow your LARPing cohort!  
+
+Join improvisers Kat and Jack for an introduction to improv. You will learn how to tell awesome stories, collaborate with fellow creators, and get out of your head while cutting loose with your buds!
+
+Due to the introductory nature of this class and limited space, we request that only Geeklies without prior improv training register for this panel.",100,Panel Room A
+180,Make your own dice bag!,07/19/19,panel,4:00 PM,5:00 PM,Make your own dice bag with colorful  fabric! No previous sewing experience required - there will be very minimal hand stitching involved.,100,Panel Room A
+1,"Miniature Painting, Part 1",07/20/19,panel,10:00 AM,11:00 AM,Paint some minis! A fee is required because you get to keep the mini!,100,Panel Room A
+1,Introduction to Orbital Mechanics,07/20/19,panel,12:00 PM,1:00 PM,Have you ever wondered what keeps satellites up in space? Wonder no more. I’ll teach you the fundamentals and all the most popular orbital regimes. Prepare to raise your Kerbel Space Program to astronomical new heights.,100,Panel Room A
+1,Monk Skills 101: Meditation and Qi Gong to Center Yourself,07/20/19,panel,1:00 PM,2:00 PM,"Cons are fun, but can also be stressful. Come calm down, center yourself, and clearn your mind by learning the basics of Qi Gong, a system of meditation, breathing exercises, and gentle movements. This is an interactive panel, so we'll be learning by doing. The breathing techniques and movements covered in this panel are non strenuous and accessible to all participants.  ",100,Panel Room A
+1,Storytelling,07/20/19,panel,2:00 PM,4:00 PM,Come listen to your friends tell stories about gaming and community! This will be a live storytelling show in the format of Risk! or The Moth. Please be aware that these stories are very uncensored.,100,Panel Room A
+1,Another Pass at Legend - Live Show,07/20/19,panel,10:00 PM,12:00 PM,"For this live episode of the movie analysis podcast, Another Pass from CertainPoV.com, Case Aiken will have author, Patrick Edwards, to discuss the 80s fantasy movie, ""Legend"".  They'll offer their thoughts on the movie and propose changes that could have been made at the time of production to improve the film.  They'll also open it up for the audience to offer their own suggestions.",100,Panel Room B
+1,Love to Hate Live Show: The Tracy Chapman Tour,07/20/19,panel,12:00 PM,1:00 PM,"From the corners of the internet, we’re coming to you live at GeeklyCon with Love to Hate Live Show: The Tracy Chapman Tour! We’ll have a Battle Royale Love to Hate off & the audience will vote on punishments/rewards doled out that day. Will Brad be able to sift through the Karen’s life story to find the recipe for a puttanesca? What happens when Kym finally finishes the cooking sake? How much Taco Bell can Nika eat? Can Steph battle her way through an army of raisins to find chocolate treasure?",100,Panel Room B
+1,Sugoi Corp. Live Show,07/20/19,panel,1:00 PM,2:00 PM,"Do you like anime? Do you have ideas for a hit new series that are just begging to be shared with the world? Do you like laughing at a bunch of nerds yelling about which fictional sad boy is the best? Join the Sugoi Corp. team as they try to create the ""perfect"" anime series from live-audience suggestions that will make even the staunchest anime-haters go UwU. It's part improv, part storyboarding workshop, and a whole lot of bad jokes!",100,Panel Room B
+1,Jennifer and Carly panel (name pending),07/20/19,panel,2:00 PM,3:00 PM,Hmm missing description,100,Panel Room B
+1,Phil's Cheeto and Complement Hour,07/20/19,panel,3:00 PM,4:00 PM,"I will eat Cheetos while you complement me. That's it.
+
+ -I will not be giving out Cheetos
+-This is not a chance to roast me. You will be kicked out if you try to roast me.
+-Do not complement other people
+-More rules to follow",100,Panel Room B
+1,Better Know A Geekly,07/20/19,panel,4:00 PM,5:00 PM,"BKAG, the long-standing GC tradition is back. Enjoy this “fireside chat” between Matthew and his guests to answer the deep questions.",100,Panel Room B
+1,"Miniature Painting, Part 2",07/21/19,panel,10:00 PM,12:00 PM,Paint some minis! A fee is required because you get to keep the mini!,100,Panel Room A
+1,SHU: Macro Crisis,07/21/19,panel,12:00 PM,4:00 PM,"A four hour gaming event! All 4 SHU shows, live, in a row. Nebulous Nights, Generation Justice, Amberville Heroes, and the Villain Underground. Alex 'Happypuke' is going to be running each of these shows, back to back, and trying to string a single narrative through all of them. What a dumb idea. Witness the disaster.",100,Panel Room A
+1,G-Commune 3: Tokyo Drift,07/21/19,panel,11:00 AM,12:00 PM,"Capitalism is making the climate change Fast, and we are Furious about it. 
+Don't just Drift into the hell worlds of tomorrow; fight the cause of global eco-death with its antithesis: sustainability, communism, and anarchy!
+
+You heard it here, germs and worms! Green future or bust! Yee-haw!",100,Panel Room B
+1,Recording Podcast Audio: A Beginner's Guide,07/21/19,panel,12:00 PM,1:00 PM,hmm missing description,100,Panel Room B
+1,"Inks & Issues - Trans-Dimensional Possibilities, Or, What Were They Thinking?: The Greatest Mutliverse Characters of All Time",07/21/19,panel,1:00 PM,2:00 PM,hmm missing description,100,Panel Room B
+1,"Tim and Jennifer and You, an hour to chat about this and that",07/21/19,panel,2:00 PM,3:00 PM,"Join Tim and Jennifer for a casual chat. Bring questions and we will bring answers. Topics might include: playing games with your spouse, creating things with your spouse, Star Trek, Homestarunner, time management and many more.",100,Panel Room B
