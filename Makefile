@@ -12,6 +12,7 @@ compile:
 
 migrate_heroku:
 	heroku run rake db:migrate
+	heroku restart
 
 reset_pk:
 	bex rails c
