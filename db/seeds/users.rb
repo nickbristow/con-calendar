@@ -20,11 +20,3 @@ csv.each do |row|
   User.create!(row_hash) unless User.where(id: row_hash['id']).count != 0
 end
 
-# Setup Events
-csv_text = File.read('dbseed-events.csv')
-csv = CSV.parse(csv_text, headers: true)
-csv.each do |row|
-  row_hash = row.to_hash
-  puts row_hash
-  Event.create!(row_hash)
-end
