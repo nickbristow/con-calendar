@@ -31,7 +31,7 @@
             h3 Admin only options
         .row.my-2
           .col-md-5
-            = f.input :owner_id, :collection => User.all, input_html: { class: 'form-control' }
+            = f.input :owner_id, :collection => User.all.order(:last_name), input_html: { class: 'form-control' }
         .row.my-2
           .col-md-5
             = f.input :image, input_html: {class: 'form-control'}
