@@ -29,6 +29,10 @@
               strong = "#{@event.name}"
             .col-md-3
               = render partial: 'shared/modify_attendee', locals: {event: @event }
+          .row
+            .col-md-9
+            .col-md-3.mt1
+              = render partial: 'shared/add_to_calendar', locals: {event: @event}
         .card-body
           - if @event.image
             .card-text
