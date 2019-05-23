@@ -3,22 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .event-border {
-  border: .5em solid #dee2e6;
+  border-top: .2em dashed #dee2e6;
+  border-bottom: .2em dashed #dee2e6;
+  border-left: .4em solid #dee2e6;
+  border-right: .4em solid #dee2e6;
+  /*background: #F9FBF3;*/
 }
 .table-row-official_event{
-	border-color: #d2f0cd;
+	border-color: #7AF588;
 }
 
 .table-row-panel{
-	border-color: #cdf0f0	
+	border-color: #9BBDF4;	
 }
 
 .table-row-game{
-	border-color: #f0cde9
+	border-color: #DE4365
 }
 
 .table-row-outing{
-	border-color: #f1e2bb
+	border-color: #FDFF00
 }
 
 @media only screen and (max-width: 769px) {
