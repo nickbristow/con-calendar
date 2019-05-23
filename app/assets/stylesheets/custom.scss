@@ -89,3 +89,15 @@ a.anchor {
   margin-left: -16px;
   margin-right: -16px;
 }
+
+label {
+  abbr{
+    color: red;
+  }
+  font-weight: bold;
+}
+
+h1, h2 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif !important;
+  text-transform: uppercase;
+}
