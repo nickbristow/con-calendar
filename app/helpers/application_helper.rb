@@ -8,7 +8,7 @@ module ApplicationHelper
   def event_dates
     @event_dates ||= [
       {
-        date: '07/18/19', date_string: 'Thursday, July 19, 2019'
+        date: '07/18/19', date_string: 'Thursday, July 18, 2019'
       },
       {
         date: '07/19/19', date_string: 'Friday, July 19, 2019'

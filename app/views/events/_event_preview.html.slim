@@ -15,7 +15,7 @@
         = "#{event.attendee_count}/#{event.max_attendee_count}"
     .col-md-4
       - append_text = '...' + content_tag(:strong, link_to('read more', event_path(event)))
-      = partial_html(event.description_md, 250, append_text).html_safe
+      = partial_html(event.description_md, 150, append_text).html_safe
     .col-md-2 
       .row
         .col-md-12
