@@ -15,6 +15,7 @@
 
 require 'redcarpet'
 require 'redcarpet/render_strip'
+require 'uri'
 
 class Event < ApplicationRecord
   validates :name, presence: true
@@ -104,5 +105,21 @@ class Event < ApplicationRecord
 
   def self.send_chain(methods)
     methods.inject(self, :send)
+  end
+
+  def event_cal_params
+    day = Date.strptime(date, '%m/%d/%y')
+    fdate = day.strftime('%Y%m%d')
+    "action=TEMPLATE" +
+    "&dates=#{fdate}T#{start_time.strftime('%H%M')}00/" +
+    "#{fdate}T#{end_time.strftime('%H%M')}00" +
+    "&ctz=America/New_York" +
+    "&text=#{uri_ampcode(name)}" +
+    "&details=#{uri_ampcode(description)}" +
+    "&location=#{uri_ampcode(location)}"
+
+  end
+  def uri_ampcode(str)
+    URI.encode(str).gsub('&', '%26')
   end
 end

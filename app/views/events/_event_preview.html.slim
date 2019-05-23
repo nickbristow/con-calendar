@@ -16,6 +16,12 @@
     .col-md-4
       - append_text = '...' + content_tag(:strong, link_to('read more', event_path(event)))
       = partial_html(event.description_md, 250, append_text).html_safe
-    .col-md-2 = render partial: 'shared/modify_attendee', locals: {event: event }
+    .col-md-2 
+      .row
+        .col-md-12
+          = render partial: 'shared/modify_attendee', locals: {event: event }
+      .row.mt2
+        .col-md-12
+          = render partial: 'shared/add_to_calendar', locals: {event: event}
 
 

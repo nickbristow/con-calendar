@@ -1,8 +1,18 @@
 .row.my2
-  .col-md-2
-    = link_to 'Create event', new_event_path, class: "btn btn-sm btn-primary btn-block"
+  .col-md-4
+  .col-md-4
+    .row
+      .col-md-12
+        h2.text-center Create a game!
+        p Want to play a game, but need players? Create your own event and people can sign up to join!
+    .row
+      .col-md-12
+        = link_to 'Create event', new_event_path, class: "btn btn-sm btn-primary btn-block"
+  .col-md-4
+hr
 = form_tag(@current_path, method: :get) do |f|
   .row.my1
+    .col-md-1
     .col-md-8
       .form-check.form-check-inline
         = check_box_tag 'official_event', '1', params[:official_event] == "1", class: 'form-check-input'
@@ -32,9 +42,9 @@
       /   = check_box_tag 'show_past_events', '1', params[:show_past_events] == "1", class: 'form-check-input'
       /   = label_tag 'show_past_events', 'Show past events', class: 'form-check-label' do
       /     = "Show past events"
-  .row
     .col-md-2
-      = button_tag "Filter", class: "btn btn-sm btn-primary btn-block"
+      = button_tag "Filter", class: "btn btn-sm btn-info btn-block"
+    .col-md-1
 
 hr
 - event_dates.each do |e_date|
