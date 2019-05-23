@@ -34,7 +34,7 @@
             .col-md-3.mt1
               = render partial: 'shared/add_to_calendar', locals: {event: @event}
         .card-body
-          - if @event.image
+          - if !@event.image.nil? && !@event.image.empty?
             .card-text
               .row.mb2
                 .col-md-12.text-center
