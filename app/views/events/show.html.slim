@@ -1,19 +1,28 @@
 .container
   .row
     .col-md-12
-      h1.h1.mb-3.font-weight-normal
-        = image_tag("https://www.geeklyinc.com/images/gc18/cal-banner-#{@event.category}.jpg", class: 'img-fluid border rounded w-75', alt: @event.category)
+      h1.h1.mb-3.font-weight-normal.remove-margin
+        = image_tag("https://www.geeklyinc.com/images/gc18/cal-banner-#{@event.category}.jpg", class: 'img-fluid', alt: @event.category)
   - if current_user.id == @event.owner_id || current_user.admin
-    .row
-      .col-md-1
-        = link_to "Edit", edit_event_path(@event)
+    .row.pb2
       .col-md-2
-        = link_to 'Delete', event_path(@event),
-          method: :delete,
-          data: { confirm: 'Are you sure you want to delete? This cannot be undone' }
-  .row
-    .col-md-9
-      .card
+      .col-md-8
+        .row
+          .col-md-3
+          .col-md-5
+           strong Event owner options:
+          .col-md-2
+            = link_to "Edit", edit_event_path(@event), class: 'btn btn-sm btn-info btn-block'
+          .col-md-2
+            = link_to 'Delete', event_path(@event),
+              class: 'btn btn-sm btn-danger btn-block',
+              method: :delete,
+              data: { confirm: 'Are you sure you want to delete? This cannot be undone' }
+      .col-md-2
+  .row.pb2
+    .col-md-2
+    .col-md-8
+      .card[class="table-row-#{@event.category}"]
         .card-header
           .row
             .col-md-9
@@ -65,3 +74,4 @@
                   - unless user.twitter.blank?
                     = " - "
                     = link_to "twitter", "http://www.twitter.com/#{user.twitter}", target: "_blank", rel: "alternate"
+    .col-md-2
