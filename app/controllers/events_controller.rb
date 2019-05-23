@@ -116,6 +116,6 @@ class EventsController < ApplicationController
     if params[:event][:owner_id].blank? || !current_user.admin?
       params[:event][:owner_id] = current_user.id
     end
-    params.require(:event).permit(:name, :description, :date, :start_time, :end_time, :category, :max_attendees, :owner_id, :location)
+    params.require(:event).permit(:name, :description, :date, :start_time, :end_time, :category, :max_attendees, :owner_id, :location, :image)
   end
 end

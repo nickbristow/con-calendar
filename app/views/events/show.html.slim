@@ -20,8 +20,8 @@
               data: { confirm: 'Are you sure you want to delete? This cannot be undone' }
       .col-md-2
   .row.pb2
-    .col-md-2
-    .col-md-8
+    .col-md-1
+    .col-md-10
       .card[class="table-row-#{@event.category}"]
         .card-header
           .row
@@ -30,6 +30,11 @@
             .col-md-3
               = render partial: 'shared/modify_attendee', locals: {event: @event }
         .card-body
+          - if @event.image
+            .card-text
+              .row.mb2
+                .col-md-12
+                  = image_tag @event.image, style: "width: 100%"
           .card-text
             .row
               .col-md-2
@@ -74,4 +79,4 @@
                   - unless user.twitter.blank?
                     = " - "
                     = link_to "twitter", "http://www.twitter.com/#{user.twitter}", target: "_blank", rel: "alternate"
-    .col-md-2
+    .col-md-1
