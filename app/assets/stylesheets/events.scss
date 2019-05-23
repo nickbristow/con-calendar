@@ -2,21 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.event-border {
+  border: .5em solid #dee2e6;
+}
 .table-row-official_event{
-	background-color: #d2f0cd;
+	border-color: #d2f0cd;
 }
 
 .table-row-panel{
-	background-color: #cdf0f0	
+	border-color: #cdf0f0	
 }
 
 .table-row-game{
-	background-color: #f0cde9
+	border-color: #f0cde9
 }
 
 .table-row-outing{
-	background-color: #f1e2bb
+	border-color: #f1e2bb
 }
 
 @media only screen and (max-width: 769px) {

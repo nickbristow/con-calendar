@@ -2,7 +2,7 @@
   - next unless event.date == event_date
   - @my_event = @users_events.find { |e| e.id == event.id } || event.owner_id == current_user.id
   - next if !@my_event && @hide_full_games && event.category == 'game' && event.attendee_count >= event.max_attendee_count
-  .row[class="table-row-#{event.category} px1 py1 my1 border rounded calendar-preview-row" id=""]
+  .row[class="table-row-#{event.category} px1 py1 my1 event-border rounded calendar-preview-row" id=""]
     a[id="event-id-#{event.id}" class="anchor"]
     .col-md-1 
       = image_tag("https://www.geeklyinc.com/images/gc18/icon-cal-#{event.category_name.downcase}.png", size: 40, alt: event.category_name)
