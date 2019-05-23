@@ -22,8 +22,8 @@
   .row.pb2
     .col-md-1
     .col-md-10
-      .card[class=""]
-        .card-header
+      .card
+        .card-header[class="table-row-#{@event.category}"]
           .row
             .col-md-9
               strong = "#{@event.name}"
