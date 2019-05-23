@@ -9,20 +9,31 @@
   border-right: .4em solid #dee2e6;
   /*background: #F9FBF3;*/
 }
+$official-color: #7AF588;
+$panel-color: #9BBDF4;
+$game-color: #DE4365;
+$outing-color: #FDFF00;
+@mixin grad($gc){
+  background-image: linear-gradient(to right, rgba($gc,1), rgba($gc,0.5), rgba($gc,0.25), rgba($gc,0),rgba($gc,0),rgba($gc,0));
+}
 .table-row-official_event{
-	border-color: #7AF588 !important;
+	border-color: $official-color !important;
+  @include grad($official-color);
 }
 
 .table-row-panel{
-	border-color: #9BBDF4 !important;	
+	border-color: $panel-color !important;
+  @include grad($panel-color);
 }
 
 .table-row-game{
-	border-color: #DE4365 !important;
+	border-color: $game-color !important;
+  @include grad($game-color);
 }
 
 .table-row-outing{
-	border-color: #FDFF00 !important;
+	border-color: $outing-color !important;
+  @include grad($outing-color);
 }
 
 @media only screen and (max-width: 769px) {
