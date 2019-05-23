@@ -14,7 +14,9 @@ $panel-color: #9BBDF4;
 $game-color: #DE4365;
 $outing-color: #FDFF00;
 @mixin grad($gc){
-  background-image: linear-gradient(to right, rgba($gc,1), rgba($gc,0.5), rgba($gc,0.25), rgba($gc,0),rgba($gc,0),rgba($gc,0));
+  @media (min-width: 768px) {
+    background-image: linear-gradient(to right, rgba($gc,1), rgba($gc,0.5), rgba($gc,0.25), rgba($gc,0),rgba($gc,0),rgba($gc,0));
+  }
 }
 .table-row-official_event{
 	border-color: $official-color !important;
