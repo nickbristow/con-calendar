@@ -82,12 +82,12 @@ class EventsController < ApplicationController
   end
 
   def filter_events
-    # Event.where(category: event_filter_categories).order(:start_time).order(:id)
-    if !category_params.empty?
-      Event.send_chain(category_params).order(:start_time).order(:id)
-    else
-      Event.all.order(:start_time).order(:id)
-    end
+    Event.where(category: event_filter_categories).order(:start_time).order(:id)
+    # if !category_params.empty?
+    #   Event.send_chain(category_params).order(:start_time).order(:id)
+    # else
+    #   Event.all.order(:start_time).order(:id)
+    # end
   end
 
   def category_params
