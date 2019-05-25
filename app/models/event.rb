@@ -40,6 +40,19 @@ class Event < ApplicationRecord
   # scope :hide_past_events, -> {(where('date !~* ?', '18'))}
   # https://www.sitepoint.com/dynamically-chain-scopes-to-clean-up-large-sql-queries/
 
+  def self.category_order
+    cat_order = sanitize_sql_array(
+      [ 
+        'case when category = ? then 1 when category = ? then 2 when category = ? then 3 when category = ? then 4 end',
+        'official_event',
+        'panel',
+        'outing',
+        'game'
+      ]
+    )
+    order(cat_order)
+  end
+
   def attendee_count
     return current_attendees unless current_attendees.nil?
     update(current_attendees: users.count)
