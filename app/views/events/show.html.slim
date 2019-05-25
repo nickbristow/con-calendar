@@ -25,14 +25,15 @@
       .card
         .card-header[class="table-row-#{@event.category}"]
           .row
-            .col-md-9
-              strong = "#{@event.name}"
+            .col-md-9.my-auto
+              h4 = "#{@event.name}"
             .col-md-3
-              = render partial: 'shared/modify_attendee', locals: {event: @event }
-          .row
-            .col-md-9
-            .col-md-3.mt1
-              = render partial: 'shared/add_to_calendar', locals: {event: @event}
+              .row
+                .col-md-12
+                  = render partial: 'shared/modify_attendee', locals: {event: @event }
+              .row.mt1
+                .col-md-12
+                  = render partial: 'shared/add_to_calendar', locals: {event: @event}
         .card-body
           - if !@event.image.nil? && !@event.image.empty?
             .card-text
