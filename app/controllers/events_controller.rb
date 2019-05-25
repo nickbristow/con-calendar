@@ -27,7 +27,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.includes(:users).find(params[:id])
+    @event = Event.includes(:users, :comments).find(params[:id])
     @event.update(current_attendees: @event.users.count)
     @users_events = current_user.events
     @user_appointments = current_user.appointments

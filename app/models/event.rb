@@ -29,6 +29,7 @@ class Event < ApplicationRecord
 
   has_many :appointments, dependent: :destroy
   has_many :users, through: :appointments
+  has_many :comments, dependent: :destroy
   attr_accessor :start_time_hour, :end_time_hour, :start_time_minute, :end_time_minute, :end_time_hour, :end_time_am_pm, :start_time_am_pm
 
   # scope :hide_full_games -> {(where('max_attendees<current_attendees'))}

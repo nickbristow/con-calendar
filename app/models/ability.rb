@@ -12,6 +12,7 @@ class Ability
     end
 
     can :manage, Event, owner_id: user.id
+    can :manage, Comment, user_id: user.id
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

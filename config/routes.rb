@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   resources :events
   resources :appointments
 
+  resources :events do
+    resources :comments
+  end
+
   match '*path' => redirect('/'), via: [:get]
 
   # devise_for :users, controllers: {

@@ -32,6 +32,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :appointments, dependent: :destroy
   has_many :events, through: :appointments
+  has_many :comments
   def name
     if preffered_name.blank?
       "#{first_name} #{last_name}"

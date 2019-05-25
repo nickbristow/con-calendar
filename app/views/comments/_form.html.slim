@@ -1,0 +1,10 @@
+.row
+  .col-md-1
+  .col-md-11
+    = simple_form_for([@event, @event.comments.build], html: {class: "usa-form-large"}) do |f|
+      .row.my-2
+        .col-md-8
+          = f.input :text, label: 'Comment', as: :text, input_html: {class: 'form-control'}
+      .row.my-2
+        .col-md-3
+          = f.button :submit, 'Add comment', class: "btn btn-lg btn-primary btn-block"

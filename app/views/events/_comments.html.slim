@@ -1,0 +1,36 @@
+.row.mt2
+  .col-md-1
+  .col-md-11
+    h2 Comments
+.row
+  .col-md-12
+    hr
+- if @event.comments.count == 0
+  .row
+    .col-md-1
+    .col-md-11
+      p No Comments. Somebody say something!
+- @event.comments.each do |comment|
+  - next if comment.user_id.nil?
+  .row
+    .col-md-1
+    .col-md-11
+      .row
+        .col-md-3
+          .row
+            .col-md-12
+              strong = comment.user.name
+          .row
+            .col-md-12
+              = comment.created_at
+        .col-md-8
+          p = comment.text_md.html_safe
+        .col-md-1
+          - if current_user.id == @event.owner_id || current_user.admin || current_user.id == comment.user_id
+            = link_to 'Delete', event_comment_path(event_id: @event.id, id: comment.id),
+                class: 'btn btn-sm btn-danger btn-block',
+                method: :delete,
+                data: { confirm: 'Are you sure you want to delete? This cannot be undone' }
+      .row
+        .col-md-12
+          hr
