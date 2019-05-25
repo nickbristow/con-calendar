@@ -10,9 +10,16 @@
   /*background: #F9FBF3;*/
 }
 $official-color: #7AF588;
+$official-color-hover: #66CB70;
+
 $panel-color: #9BBDF4;
+$panel-color-hover: #83A0CF;
+
 $game-color: #DE4365;
+$game-color-hover: #B1344E;
+
 $outing-color: #FDFF00;
+$outing-color-hover: #D3D604;
 @mixin grad($gc){
   @media (min-width: 768px) {
     background-image: linear-gradient(to right, rgba($gc,1), rgba($gc,0.1), rgba($gc,0), rgba($gc,0),rgba($gc,0),rgba($gc,0));
@@ -22,10 +29,19 @@ $outing-color: #FDFF00;
 	border-color: $official-color !important;
   @include grad($official-color);
 }
+.table-row-official_event-hover:hover{
+  border-color: $official-color-hover !important;
+  @include grad($official-color-hover);
+}
 
 .table-row-panel{
 	border-color: $panel-color !important;
   @include grad($panel-color);
+}
+
+.table-row-panel-hover:hover{
+  border-color: $panel-color-hover !important;
+  @include grad($panel-color-hover);
 }
 
 .table-row-game{
@@ -33,9 +49,19 @@ $outing-color: #FDFF00;
   @include grad($game-color);
 }
 
+.table-row-game-hover:hover{
+  border-color: $game-color-hover !important;
+  @include grad($game-color-hover);
+}
+
 .table-row-outing{
 	border-color: $outing-color !important;
   @include grad($outing-color);
+}
+
+.table-row-outing-hover:hover{
+  border-color: $outing-color-hover !important;
+  @include grad($outing-color-hover);
 }
 
 @media only screen and (max-width: 769px) {
