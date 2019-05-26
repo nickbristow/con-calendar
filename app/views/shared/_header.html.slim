@@ -5,10 +5,18 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
   .collapse.navbar-collapse id="navbarsExampleDefault"
     ul.navbar-nav.mr-auto
       - if user_signed_in?
-        li[class="nav-item #{active_page_class(events_path)}"]
+        li[class="nav-item #{active_page_class(events_path(hide_full_games: 1))}"]
           = link_to "Schedule", events_path(hide_full_games: 1), class: 'nav-link'
         li[class="nav-item #{active_page_class(events_my_calendar_path)}"]
           = link_to "My schedule", events_my_calendar_path, class: 'nav-link'
+        li[class="nav-item #{active_page_class(events_path(hide_full_games: 1, official_event: 1))}"]
+          = link_to "Official Events", events_path(hide_full_games: 1, official_event: 1), class: 'nav-link'
+        li[class="nav-item #{active_page_class(events_path(hide_full_games: 1, panel: 1))}"]
+          = link_to "Panels", events_path(hide_full_games: 1, panel: 1), class: 'nav-link'
+        li[class="nav-item #{active_page_class(events_path(hide_full_games: 1, game: 1))}"]
+          = link_to "Games", events_path(hide_full_games: 1, game: 1), class: 'nav-link'
+        li[class="nav-item #{active_page_class(events_path(hide_full_games: 1, outing: 1))}"]
+          = link_to "Outings", events_path(hide_full_games: 1, outing: 1), class: 'nav-link'
         - if current_user.admin?
           li[class="nav-item #{active_page_class(users_path)}"]
             = link_to "View users (admin only)", users_path, class: 'nav-link'
