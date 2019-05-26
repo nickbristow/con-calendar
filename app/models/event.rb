@@ -75,6 +75,14 @@ class Event < ApplicationRecord
     end
   end
 
+  def hours
+    if start_time && end_time
+      "<strong>#{start_time.strftime('%I:%M%p')}-#{end_time.strftime('%I:%M%p')}</strong>".html_safe
+    else
+      ''
+    end
+  end
+
   def self.event_categories(user)
     if user.admin
       %w[official_event panel game outing]
@@ -133,7 +141,16 @@ class Event < ApplicationRecord
     "&location=#{uri_ampcode(location)}"
 
   end
+
   def uri_ampcode(str)
     URI.encode(str).gsub('&', '%26')
+  end
+
+  def conflicting_events
+    Event.where(start_time: start_time...end_time)
+      .or(Event.where(end_time: start_time...end_time))
+      .or(Event.where('start_time < ? AND end_time > ?', start_time, end_time))
+      .where.not(id: id)
+      .where(date: date)
   end
 end
