@@ -152,5 +152,6 @@ class Event < ApplicationRecord
       .or(Event.where('start_time < ? AND end_time > ?', start_time, end_time))
       .where.not(id: id)
       .where(date: date)
+      .order(:start_time).category_order.order(:id)
   end
 end
