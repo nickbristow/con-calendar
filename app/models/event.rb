@@ -77,7 +77,7 @@ class Event < ApplicationRecord
 
   def hours
     if start_time && end_time
-      "<strong>#{start_time.strftime('%I:%M%p')} - #{end_time.strftime('%I:%M%p')}</strong>".html_safe
+      "<strong>#{start_time.strftime('%I:%M%p')}-#{end_time.strftime('%I:%M%p')}</strong>".html_safe
     else
       ''
     end
