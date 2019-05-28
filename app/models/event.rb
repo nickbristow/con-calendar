@@ -69,7 +69,7 @@ class Event < ApplicationRecord
 
   def time_period
     if start_time && end_time
-      "#{day_of_week} <strong>#{start_time.strftime('%I:%M%p')}-#{end_time.strftime('%I:%M%p')}</strong>".html_safe
+      "#{day_of_week} <strong class='even-space'>#{start_time.strftime('%I:%M%p')}-#{end_time.strftime('%I:%M%p')}</strong>".html_safe
     else
       ''
     end
@@ -77,7 +77,7 @@ class Event < ApplicationRecord
 
   def hours
     if start_time && end_time
-      "<strong>#{start_time.strftime('%I:%M%p')}-#{end_time.strftime('%I:%M%p')}</strong>".html_safe
+      "<strong class='even-space'>#{start_time.strftime('%I:%M%p')}-#{end_time.strftime('%I:%M%p')}</strong>".html_safe
     else
       ''
     end
