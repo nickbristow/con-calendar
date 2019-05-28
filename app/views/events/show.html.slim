@@ -81,9 +81,10 @@
             .row
               .col-md-2
                 strong Attendees:
-              .col-md-10
+              .col-md-2
                 = "#{@event.attendee_count}/#{@event.max_attendees}"
-          .card-text
+                a data-toggle='collapse' href='#user-list' role='button' aria-expanded='false' aria-controls='user-list' = " show"
+          .collapse.card-text.collapse.multi-collapse id="user-list"
             ul
               - @event.users.each do |user|
                 li
