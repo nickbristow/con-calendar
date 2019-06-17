@@ -92,6 +92,18 @@
                   - unless user.twitter.blank?
                     = " - "
                     = link_to "twitter", "http://www.twitter.com/#{user.twitter}", target: "_blank", rel: "alternate"
+          - if current_user.admin
+            .card-text
+              .row
+                .col-md-2
+                  strong Emails (admin):
+                .col-md-2
+                  a data-toggle='collapse' href='#user-emails' role='button' aria-expanded='false' aria-controls='user-emails' = " show emails"
+            .collapse.card-text.collapse.multi-collapse id="user-emails"
+              ul
+                - @event.users.each do |user|
+                  li
+                    = user.email
     .col-md-1
   = render partial: 'conflicting_events'
   = render partial: 'comments/form'
