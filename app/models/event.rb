@@ -120,6 +120,15 @@ class Event < ApplicationRecord
     end
   end
 
+  def owner_email
+    @owner ||= User.where(id: owner_id)
+    if !@owner.blank?
+      @owner.first.email
+    else
+      ''
+    end
+  end
+
   def day_of_week
     days = %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday)
     days[Date.strptime(date, '%m/%d/%y').wday]    

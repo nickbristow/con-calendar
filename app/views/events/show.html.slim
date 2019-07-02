@@ -53,6 +53,13 @@
                 strong Owner:
               .col-md-10
                 = @event.owner_name
+          - if current_user.admin
+            .card-text
+              .row
+                .col-md-2
+                  strong Owner Email (admin only):
+                .col-md-10
+                  = @event.owner_email
           .card-text
             .row
               .col-md-2
