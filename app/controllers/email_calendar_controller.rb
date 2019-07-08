@@ -43,7 +43,7 @@ class EmailCalendarController < ApplicationController
 
   def get_users_events(user, day = 'ALL')
     if day == 'ALL'
-      events = user.all_events
+      events = user.all_events.where(date: Event.active_event_dates)
     else
       events = user.all_events.where(date: day)
     end

@@ -19,7 +19,7 @@
           = f.input :location, input_html: { value: f.object.location || 'Gameroom', class: 'form-control' }
       .row.my-2
         .col-md-5
-          = f.input :date, :collection => [["July 18, 2019", "07/18/19"], ["July 19, 2019", "07/19/19"], ["July 20, 2019", "07/20/19"], ["July 21, 2019", "07/21/19"]]
+          = f.input :date, :collection => Event.active_dates_and_text
       .row.my-2
         .col-md-5
           = f.input :start_time, as: :time, html5: true, input_html:{ class: 'form-control'}

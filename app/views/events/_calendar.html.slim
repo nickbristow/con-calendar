@@ -51,8 +51,8 @@ hr
   .col-md-1
   .col-md-11
     i All free Official Events/Panels are <strong>first come, first serve</strong> based on capacity. Adding an Event/Panel to your calendar <strong>does not guarantee</strong> you a seat in that event.
-- event_dates.each do |e_date|
+- Event.active_dates_and_text.each do |e_date|
   .row.my2
     .col-md-6
-      h2.h2.mb-3.font-weight-normal = e_date[:date_string]
-  = render partial: 'event_preview', :locals => {events: @events, event_date: e_date[:date]}
+      h2.h2.mb-3.font-weight-normal = e_date[0]
+  = render partial: 'event_preview', :locals => {events: @events, event_date: e_date[1]}

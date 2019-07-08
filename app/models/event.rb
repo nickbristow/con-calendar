@@ -53,6 +53,21 @@ class Event < ApplicationRecord
     order(cat_order)
   end
 
+  def self.active_event_dates
+    self.active_dates_and_text.map do |d|
+      d[1]
+    end
+  end
+
+  def self.active_dates_and_text
+    [
+      ["July 18, 2019", "07/18/19"],
+      ["July 19, 2019", "07/19/19"],
+      ["July 20, 2019", "07/20/19"],
+      ["July 21, 2019", "07/21/19"],
+    ]
+  end
+
   def attendee_count
     return current_attendees unless current_attendees.nil?
     update(current_attendees: users.count)
