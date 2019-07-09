@@ -33,16 +33,16 @@ class Event < ApplicationRecord
   attr_accessor :start_time_hour, :end_time_hour, :start_time_minute, :end_time_minute, :end_time_hour, :end_time_am_pm, :start_time_am_pm
 
   # scope :hide_full_games -> {(where('max_attendees<current_attendees'))}
-  scope :official_event, -> {(where(category: 'official_event'))}
-  scope :panel, -> {(where(category: 'panel'))}
-  scope :game, -> {(where(category: 'game'))}
-  scope :outing, -> {(where(category: 'outing'))}
+  scope :official_event, -> { where(category: 'official_event') }
+  scope :panel, -> { where(category: 'panel') }
+  scope :game, -> { where(category: 'game') }
+  scope :outing, -> { where(category: 'outing') }
   # scope :hide_past_events, -> {(where('date !~* ?', '18'))}
   # https://www.sitepoint.com/dynamically-chain-scopes-to-clean-up-large-sql-queries/
 
   def self.category_order
     cat_order = sanitize_sql_array(
-      [ 
+      [
         'case when category = ? then 1 when category = ? then 2 when category = ? then 3 when category = ? then 4 end',
         'official_event',
         'panel',
@@ -54,22 +54,23 @@ class Event < ApplicationRecord
   end
 
   def self.active_event_dates
-    self.active_dates_and_text.map do |d|
+    active_dates_and_text.map do |d|
       d[1]
     end
   end
 
   def self.active_dates_and_text
     [
-      ["July 18, 2019", "07/18/19"],
-      ["July 19, 2019", "07/19/19"],
-      ["July 20, 2019", "07/20/19"],
-      ["July 21, 2019", "07/21/19"],
+      ['July 18, 2019', '07/18/19'],
+      ['July 19, 2019', '07/19/19'],
+      ['July 20, 2019', '07/20/19'],
+      ['July 21, 2019', '07/21/19']
     ]
   end
 
   def attendee_count
     return current_attendees unless current_attendees.nil?
+
     update(current_attendees: users.count)
     users.count
   end
@@ -122,6 +123,7 @@ class Event < ApplicationRecord
 
   def category_name
     return 'Game' if category.blank?
+
     cat_names = { game: 'Game', official_event: 'Geekly', outing: 'Outing', panel: 'Panel' }
     cat_names[category.to_sym]
   end
@@ -145,8 +147,8 @@ class Event < ApplicationRecord
   end
 
   def day_of_week
-    days = %w(Sunday Monday Tuesday Wednesday Thursday Friday Saturday)
-    days[Date.strptime(date, '%m/%d/%y').wday]    
+    days = %w[Sunday Monday Tuesday Wednesday Thursday Friday Saturday]
+    days[Date.strptime(date, '%m/%d/%y').wday]
   end
 
   def self.send_chain(methods)
@@ -156,14 +158,13 @@ class Event < ApplicationRecord
   def event_cal_params
     day = Date.strptime(date, '%m/%d/%y')
     fdate = day.strftime('%Y%m%d')
-    "action=TEMPLATE" +
-    "&dates=#{fdate}T#{start_time.strftime('%H%M')}00/" +
-    "#{fdate}T#{end_time.strftime('%H%M')}00" +
-    "&ctz=America/New_York" +
-    "&text=#{uri_ampcode(name)}" +
-    "&details=#{uri_ampcode(description)}" +
-    "&location=#{uri_ampcode(location)}"
-
+    'action=TEMPLATE' \
+      "&dates=#{fdate}T#{start_time.strftime('%H%M')}00/" \
+      "#{fdate}T#{end_time.strftime('%H%M')}00" \
+      '&ctz=America/New_York' \
+      "&text=#{uri_ampcode(name)}" \
+      "&details=#{uri_ampcode(description)}" \
+      "&location=#{uri_ampcode(location)}"
   end
 
   def uri_ampcode(str)
@@ -172,10 +173,10 @@ class Event < ApplicationRecord
 
   def conflicting_events
     Event.where(start_time: start_time...end_time)
-      .or(Event.where(end_time: start_time...end_time))
-      .or(Event.where('start_time < ? AND end_time > ?', start_time, end_time))
-      .where.not(id: id)
-      .where(date: date)
-      .order(:start_time).category_order.order(:id)
+         .or(Event.where(end_time: start_time...end_time))
+         .or(Event.where('start_time < ? AND end_time > ?', start_time, end_time))
+         .where.not(id: id)
+         .where(date: date)
+         .order(:start_time).category_order.order(:id)
   end
 end

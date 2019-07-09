@@ -3,6 +3,7 @@
 class EmailCalendarController < ApplicationController
   def email_to
     return unless current_user.admin?
+
     puts '****emailed'
     @user = User.find(params[:id])
     if @user
@@ -18,11 +19,12 @@ class EmailCalendarController < ApplicationController
     return unless @email_all_params[:day]
     return unless @email_all_params[:subject]
     return unless current_user.admin?
-    if @email_all_params[:admin_only] == "false"
-      users = User.all
-    else
-      users = User.where(admin: true)
-    end
+
+    users = if @email_all_params[:admin_only] == 'false'
+              User.all
+            else
+              User.where(admin: true)
+            end
     users.all.each do |user|
       events = get_users_events(user, @email_all_params[:day])
       mail = UserMailer.notice_email(
@@ -42,16 +44,16 @@ class EmailCalendarController < ApplicationController
   private
 
   def get_users_events(user, day = 'ALL')
-    if day == 'ALL'
-      events = user.all_events.where(date: Event.active_event_dates)
-    else
-      events = user.all_events.where(date: day)
-    end
+    events = if day == 'ALL'
+               user.all_events.where(date: Event.active_event_dates)
+             else
+               user.all_events.where(date: day)
+             end
     format_user_events(events)
   end
 
-  def format_user_events events
-    render_to_string partial: 'email_calendar/email_events', locals: {events: events}
+  def format_user_events(events)
+    render_to_string partial: 'email_calendar/email_events', locals: { events: events }
   end
 
   def email_all_params

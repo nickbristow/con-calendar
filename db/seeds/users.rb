@@ -19,4 +19,3 @@ csv.each do |row|
   puts row_hash
   User.create!(row_hash) unless User.where(id: row_hash['id']).count != 0
 end
-

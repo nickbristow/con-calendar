@@ -92,7 +92,7 @@ class EventsController < ApplicationController
 
   def category_params
     # if params[:show_past_events]
-      params.permit(:official_event, :panel, :game, :outing).to_h.keys
+    params.permit(:official_event, :panel, :game, :outing).to_h.keys
     # else
     #   keys = params.permit(:official_event, :panel, :game, :outing).to_h.keys
     #   keys.push(:hide_past_events)
@@ -116,7 +116,7 @@ class EventsController < ApplicationController
     if params[:event][:owner_id].blank? || !current_user.admin?
       params[:event][:owner_id] = current_user.id
     end
-    
+
     if current_user.admin?
       params.require(:event).permit(:name, :description, :date, :start_time, :end_time, :category, :max_attendees, :owner_id, :location, :image)
     else
