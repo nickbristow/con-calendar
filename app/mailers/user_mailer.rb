@@ -6,7 +6,7 @@ class UserMailer < ApplicationMailer
     @body = body
     @events = events
     @day = day
-    @day_name = if @day != 'All' DateTime.strptime(@day, '%m/%d/%y').strftime("%A")
+    @day_name = DateTime.strptime(@day, '%m/%d/%y').strftime("%A") if @day != 'All'
     mail(to: @user.email, subject: subject)
   end
 end
