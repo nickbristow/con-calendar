@@ -181,9 +181,18 @@ class Event < ApplicationRecord
   # end
 
   def conflicting_events
-    Event.where('start_time > ? AND start_time < ?', start_time, end_time)
-      .or(Event.where('end_time > ? AND end_time < ?', start_time, end_time))
-      .or(Event.where('start_time < ? AND end_time > ?', start_time, end_time))
+    # Event.where('start_time > ? AND start_time < ?', start_time, end_time)
+    #   .or(Event.where('end_time > ? AND end_time < ?', start_time, end_time))
+    #   .or(Event.where('start_time < ? AND end_time > ?', start_time, end_time))
+    #   .or(Event.where('start_time = ? AND end_time > ?', start_time, end_time))
+    #   .or(Event.where('start_time < ? and end_time = ?', start_time, end_time))
+    Event.where(
+      "(start_time > :start AND start_time < :end) OR
+       (end_time > :start AND end_time < :end) OR
+       (start_time < :start AND end_time > :end) OR
+       (start_time = :start AND end_time > :end) OR
+       (start_time < :start and end_time = :end)
+      ", {start: start_time, end: end_time})
       .where.not(id: id)
       .where(date: date)
       .order(:start_time).category_order.order(:id)
