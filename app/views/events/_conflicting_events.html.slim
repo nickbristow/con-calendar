@@ -1,20 +1,14 @@
-- events = @event.conflicting_events
-- if events.count > 0
+- conflicting_events = @event.conflicting_events
+- prior_events = @event.prior_events
+- upcoming_events = @event.upcoming_events
+- if (conflicting_events.count +  prior_events.count + upcoming_events.count) > 0
   .row
     .col-md-12
       hr
   .row
     .col-md-1
     .col-md-11
-      h2 Conflicting events
-  - events.each do |event|
-    .row
-      .col-md-1
-      .col-md-2 = event.hours
-      .col-md-9
-        strong
-          span.px1
-            - image_type = event.category == 'official_event' ? 'geekly' : event.category
-            = image_tag("https://www.geeklyinc.com/images/gc18/icon-cal-#{image_type}.png", size: 20, alt: "")
-          = link_to event.name, event_path(event)
-  hr
+      h2 Other events
+  = render partial: 'conflicting_events_section', locals: {events: prior_events, event_heading: 'Prior events'}
+  = render partial: 'conflicting_events_section', locals: {events: conflicting_events, event_heading: 'Conflicting events'}
+  = render partial: 'conflicting_events_section', locals: {events: upcoming_events, event_heading: 'Upcoming events'}
