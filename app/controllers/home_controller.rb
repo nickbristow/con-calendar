@@ -11,6 +11,6 @@ class HomeController < ApplicationController
 
   def letsencrypt
       # use your code here, not mine
-    render text: "wIU181Wz2oeqZnDycZFoycU--3tc_389dIy8JMbdlNo.aovLs7n9uAOYY5P1wcGKXnG5YPfpRvImU-VQiWZfP-s"
+    render text: "0lCUsJCKqkgPOZM6UAYHUWzm8Q0MrhX2alteobzVGs0.aovLs7n9uAOYY5P1wcGKXnG5YPfpRvImU-VQiWZfP-s"
   end
 end
