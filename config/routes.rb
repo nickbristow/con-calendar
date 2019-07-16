@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   root 'home#index'
-
+  get '/.well-known/acme-challenge/:id' => 'home#letsencrypt'
   get 'events/my_calendar', to: 'events#my_events'
   get 'email_calendar/:id', to: 'email_calendar#email_to', as: :email_to
   post 'email_calendar', to: 'email_calendar#email_all', as: :email_all
@@ -21,7 +21,6 @@ Rails.application.routes.draw do
 
   match '*path' => redirect('/'), via: [:get]
 
-  get '/.well-known/acme-challenge/:id' => 'home#letsencrypt'
 
   # devise_for :users, controllers: {
   #   sessions: 'users/sessions'
