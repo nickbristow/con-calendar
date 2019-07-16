@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   match '*path' => redirect('/'), via: [:get]
 
+  get '/.well-known/acme-challenge/:id' => 'home#letsencrypt'
+
   # devise_for :users, controllers: {
   #   sessions: 'users/sessions'
   # }
