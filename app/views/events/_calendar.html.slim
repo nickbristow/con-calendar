@@ -54,5 +54,6 @@ hr
 - Event.active_dates_and_text.each do |e_date|
   .row.my2
     .col-md-6
-      h2.h2.mb-3.font-weight-normal = e_date[0]
+      - day_name = DateTime.strptime(e_date[0], '%m/%d/%y').strftime("%A")
+      h2.h2.mb-3.font-weight-normal = "#{day_name}, #{e_date[0]}"
   = render partial: 'event_preview', :locals => {events: @events, event_date: e_date[1]}
