@@ -178,23 +178,24 @@ class Event < ApplicationRecord
        (start_time < :start AND end_time > :end) OR
        (start_time = :start AND end_time > :end) OR
        (start_time < :start and end_time = :end)
-      ", {start: start_time, end: end_time})
-      .where.not(id: id)
-      .where(date: date)
-      .order(:start_time).category_order.order(:id)
+      ", start: start_time, end: end_time
+    )
+                                 .where.not(id: id)
+                                 .where(date: date)
+                                 .order(:start_time).category_order.order(:id)
   end
 
   def prior_events
     @prior_events ||= Event.where(end_time: start_time)
-      .where.not(id: id)
-      .where(date: date)
-      .order(:start_time).category_order.order(:id)
+                           .where.not(id: id)
+                           .where(date: date)
+                           .order(:start_time).category_order.order(:id)
   end
 
   def upcoming_events
     @upcoming_events ||= Event.where(start_time: end_time)
-      .where.not(id: id)
-      .where(date: date)
-      .order(:start_time).category_order.order(:id)
+                              .where.not(id: id)
+                              .where(date: date)
+                              .order(:start_time).category_order.order(:id)
   end
 end

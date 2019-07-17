@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   end
 
   def letsencrypt
-      # use your code here, not mine
-    render text: "0lCUsJCKqkgPOZM6UAYHUWzm8Q0MrhX2alteobzVGs0.aovLs7n9uAOYY5P1wcGKXnG5YPfpRvImU-VQiWZfP-s"
+    # use your code here, not mine
+    render text: '0lCUsJCKqkgPOZM6UAYHUWzm8Q0MrhX2alteobzVGs0.aovLs7n9uAOYY5P1wcGKXnG5YPfpRvImU-VQiWZfP-s'
   end
 end
