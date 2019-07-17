@@ -52,7 +52,7 @@ hr
   .col-md-11
     i All free Official Events/Panels are <strong>first come, first serve</strong> based on capacity. Adding an Event/Panel to your calendar <strong>does not guarantee</strong> you a seat in that event.
 - Event.active_dates_and_text.each do |e_date|
-  .row.my2
+  .row.my2.px2
     .col-md-6
       - day_name = DateTime.strptime(e_date[1], '%m/%d/%y').strftime("%A")
       h2.h2.mb-3.font-weight-normal = "#{day_name}, #{e_date[0]}"
