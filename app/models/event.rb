@@ -61,10 +61,8 @@ class Event < ApplicationRecord
 
   def self.active_dates_and_text
     [
-      ['July 16, 2020', '07/16/20'],
-      ['July 17, 2020', '07/17/20'],
-      ['July 18, 2020', '07/18/20'],
-      ['July 19, 2020', '07/19/20']
+      ['August 8, 2020', '08/08/20'],
+      ['August 9, 2020', '08/09/20']
     ]
   end
 

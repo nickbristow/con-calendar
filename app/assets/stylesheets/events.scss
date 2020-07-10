@@ -22,7 +22,9 @@ $outing-color: #FDFF00;
 $outing-color-hover: #D3D604;
 @mixin grad($gc){
   @media (min-width: 768px) {
-    background-image: linear-gradient(to right, rgba($gc,1), rgba($gc,0.1), rgba($gc,0), rgba($gc,0),rgba($gc,0),rgba($gc,0));
+    /*background-image: linear-gradient(to right, rgba($gc,1), rgba($gc,0.1), rgba($gc,0), rgba($gc,0),rgba($gc,0),rgba($gc,0));*/
+    /*background: $gc !important;*/
+    border-bottom: .5rem solid $gc !important;
   }
 }
 .table-row-official_event{

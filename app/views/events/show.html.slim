@@ -23,9 +23,11 @@
     .col-md-1
     .col-md-10
       .card
-        .card-header[class="table-row-#{@event.category}"]
+        .card-header[class="table-row-#{@event.category} event-border"]
           .row
-            .col-md-9.my-auto
+            .col-md-1 
+              = image_tag("https://www.geeklyinc.com/images/gc18/icon-cal-#{@event.category_name.downcase}.png", size: 40, alt: @event.category_name)
+            .col-md-8.my-auto
               h4 = "#{@event.name}"
             .col-md-3
               .row
