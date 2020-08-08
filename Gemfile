@@ -24,8 +24,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'basscss-rails'
 
 gem 'devise'
-gem 'omniauth'
-gem 'omniauth-twitter'
 
 gem 'slim-rails'
 
