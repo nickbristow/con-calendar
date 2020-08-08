@@ -20,3 +20,6 @@ reset_pk:
 
 heroku_console:
 	heroku run rails console
+
+build:
+	docker build -t nickbristow/con-calendar:latest .

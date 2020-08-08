@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '2.4.6'
+if ENV['RUBY_VER']
+  ruby ENV['RUBY_VER']
+else
+  ruby '2.4.6'
+end
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
@@ -20,6 +24,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'basscss-rails'
 
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 gem 'slim-rails'
 
