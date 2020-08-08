@@ -46,7 +46,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'cancancan', '~> 2.0'
-gem 'loofah', '~> 2.2.1'
+gem 'loofah', '~> 2.3.1'
 gem 'nokogiri', '~> 1.10.8'
 gem 'rails-html-sanitizer', '~> 1.0.4'
 
