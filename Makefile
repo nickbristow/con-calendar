@@ -23,3 +23,6 @@ heroku_console:
 
 build:
 	docker build -t nickbristow/con-calendar:latest .
+
+pg:
+	docker-compose -f docker-compose.pg.yml up -d
