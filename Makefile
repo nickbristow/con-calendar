@@ -2,7 +2,7 @@ default:
 	print 'type make deploy; make compile; make migrate_heroku; make reset_pk;'
 
 run:
-	TWITTER_API_PUBLIC="46927552-fhkefpaselwO17EDX2MeEcTkfC0CAzJ9In6fmi73H" TWITTER_API_SECRET="za7mEvzJuKlyFKFkYtRB1LS5KvCGGD3SaOULbj2tkxC51" bundle exec rails s
+	bundle exec rails s
 
 deploy:
 	git push heroku master
