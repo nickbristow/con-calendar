@@ -20,3 +20,9 @@ reset_pk:
 
 heroku_console:
 	heroku run rails console
+
+build:
+	docker build -t nickbristow/con-calendar:latest .
+
+pg:
+	docker-compose -f docker-compose.pg.yml up -d

@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '2.4.6'
+if ENV['RUBY_VER']
+  ruby ENV['RUBY_VER']
+else
+  ruby '2.4.6'
+end
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
