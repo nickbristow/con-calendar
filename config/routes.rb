@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
   get 'sessions/new'
 
   root 'home#index'
@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'email_calendar/:id', to: 'email_calendar#email_to', as: :email_to
   post 'email_calendar', to: 'email_calendar#email_all', as: :email_all
   get 'email_calendar', to: 'email_calendar#index', as: :email_calendar
+
+  get 'privacy', to: 'privacy#index'
 
   resources :users, only: %i[index update show]
   resources :events
