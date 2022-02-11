@@ -115,7 +115,8 @@ GEM
     pry-byebug (3.8.0)
       byebug (~> 11.0)
       pry (~> 0.10)
-    puma (3.12.6)
+    puma (4.3.11)
+      nio4r (~> 2.0)
     rack (2.0.9)
     rack-protection (2.0.8.1)
       rack
@@ -251,7 +252,7 @@ DEPENDENCIES
   pg (~> 0.18)
   pry
   pry-byebug
-  puma (~> 3.12)
+  puma (~> 4.3)
   rails (~> 5.0.6)
   rails-html-sanitizer (~> 1.0.4)
   raygun4ruby
