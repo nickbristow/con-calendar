@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 if ENV['RUBY_VER']
   ruby ENV['RUBY_VER']
 else
-  ruby '2.6.6'
+  ruby '2.7.6'
 end
 
 git_source(:github) do |repo_name|
