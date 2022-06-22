@@ -50,7 +50,7 @@ class Event < ApplicationRecord
         'game'
       ]
     )
-    order(cat_order)
+    order(Arel.sql(cat_order))
   end
 
   def self.active_event_dates
@@ -168,7 +168,7 @@ class Event < ApplicationRecord
   end
 
   def uri_ampcode(str)
-    URI.encode(str).gsub('&', '%26')
+    CGI.escape(str).gsub('&', '%26')
   end
 
   def conflicting_events

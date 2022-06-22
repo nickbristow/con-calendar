@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 if ENV['RUBY_VER']
   ruby ENV['RUBY_VER']
 else
-  ruby '2.7.6'
+  ruby '3.1.2'
 end
 
 git_source(:github) do |repo_name|
@@ -13,9 +13,9 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.6'
+gem 'rails', '>= 7.0.0'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
@@ -49,10 +49,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'cancancan', '~> 2.0'
-gem 'loofah', '~> 2.3.1'
+gem 'cancancan', '~> 3.3.0'
+gem 'loofah'
 gem 'nokogiri', '~> 1.13.6'
-gem 'rails-html-sanitizer', '~> 1.0.4'
+gem 'rails-html-sanitizer'
 
 gem 'newrelic_rpm'
 gem 'raygun4ruby'
@@ -72,7 +72,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'listen', '~> 3.0.5'
+  gem 'listen'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'slim_lint'
