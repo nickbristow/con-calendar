@@ -26,3 +26,6 @@ build:
 
 pg:
 	docker-compose -f docker-compose.pg.yml up -d
+
+logs:
+	heroku logs --tail
