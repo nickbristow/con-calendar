@@ -171,3 +171,11 @@ h2 {
 .form-signup {
   max-width: 600px !important;
 }
+
+.checkbox-custom {
+  input {
+    width: auto;
+    display: inline;
+    padding-right: 1rem;
+  }
+}
