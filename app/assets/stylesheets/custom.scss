@@ -125,10 +125,38 @@ a.anchor {
 }
 
 .container {
-  background-color: #ffffff;
+  background-color: #2e2f2f;
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 1em;
+  color: rgba(255, 255, 255, 1);
+  a {
+    color: #82d24e;
+    &:hover {
+      color: #63a13c;
+    }
+    &:visited {
+      color: #82d24e;
+    }
+  }
+}
+
+.card {
+  background-color: #2e2f2f !important;
+  color: rgba(255, 255, 255, 1);
+  a {
+    color: #82d24e;
+    &:hover {
+      color: #63a13c;
+    }
+    &:visited {
+      color: #82d24e;
+    }
+  }
+}
+
+.navbar {
+  background-color: #2e2f2f;
 }
 
 .calendar-preview-row {

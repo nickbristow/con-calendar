@@ -12,7 +12,7 @@
     .col-md-1 = event.location
     .col-md-1 
       span[title='number attending the panel']
-        = "#{event.attendee_count}/#{event.max_attendee_count}"
+        = "#{event.attendee_count || 0}/#{event.max_attendee_count || 1}"
     .col-md-4
       - append_text = '...' + content_tag(:strong, link_to('read more', event_path(event)))
       = partial_html(event.description_md, 150, append_text).html_safe
