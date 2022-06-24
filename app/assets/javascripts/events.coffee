@@ -3,10 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-$(document).ready ->
-  $('.form_datetime').datetimepicker({
-    autoclose: true,
-    todayBtn: true,
-    pickerPosition: "bottom-left",
-    format: 'hh:ii'
-  });
+# $(document).ready ->
+#   $('.form_datetime').datetimepicker({
+#     autoclose: true,
+#     todayBtn: true,
+#     pickerPosition: "bottom-left",
+#     format: 'hh:ii'
+#   });
