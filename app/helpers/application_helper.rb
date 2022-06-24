@@ -18,6 +18,7 @@ module ApplicationHelper
     missing_tags.reverse.each do |tag|
       partial += tag
     end
+    partial = "#{partial}</p>" if !partial.rindex(%r{</p>})
     partial.insert(partial.rindex(%r{</p>}), append_text)
   end
 end
