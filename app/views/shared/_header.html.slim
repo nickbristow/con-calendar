@@ -1,10 +1,10 @@
-nav.navbar.navbar-expand-md.navbar-dark.fixed-top
-  = link_to "GeeklyCon Calendar", root_path, class: "navbar-brand"
-  button[class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="true" aria-label="Toggle navigation"]
-    span.navbar-toggler-icon
-  .collapse.navbar-collapse id="navbarsExampleDefault"
-    ul.navbar-nav.mr-auto
-      - if user_signed_in?
+- if user_signed_in?
+  nav.navbar.navbar-expand-md.navbar-dark.fixed-top
+    = link_to "GeeklyCon Calendar", root_path, class: "navbar-brand"
+    button[class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="true" aria-label="Toggle navigation"]
+      span.navbar-toggler-icon
+    .collapse.navbar-collapse id="navbarsExampleDefault"
+      ul.navbar-nav.mr-auto
         li[class="nav-item #{active_page_class(events_path(hide_full_games: 1))}"]
           = link_to "Schedule", events_path(hide_full_games: 1), class: 'nav-link'
         li[class="nav-item #{active_page_class(events_my_calendar_path)}"]
@@ -25,9 +25,9 @@ nav.navbar.navbar-expand-md.navbar-dark.fixed-top
         - if current_user.admin?
           li[class="nav-item #{active_page_class(email_calendar_path)}"]
             = link_to "Email Schedule (admin only)", email_calendar_path, class: 'nav-link'
-    .form-inline.my-2.my-lg-0
-      - if !user_signed_in?
-        = link_to "Sign Up", new_user_registration_path, class: 'btn btn-outline-light my-2 my-sm-0 mx-1'
-        = link_to "Sign In", new_user_session_path, class: 'btn btn-outline-success my-2 my-sm-0 mx-1'
-      - else
-        = button_to "Sign out", destroy_user_session_path , :method => :delete, class: 'btn btn-outline-warning my-2 my-sm-0'
+      .form-inline.my-2.my-lg-0
+        - if !user_signed_in?
+          = link_to "Sign Up", new_user_registration_path, class: 'btn btn-outline-light my-2 my-sm-0 mx-1'
+          = link_to "Sign In", new_user_session_path, class: 'btn btn-outline-success my-2 my-sm-0 mx-1'
+        - else
+          = button_to "Sign out", destroy_user_session_path , :method => :delete, class: 'btn btn-outline-warning my-2 my-sm-0'

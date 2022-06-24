@@ -130,6 +130,7 @@ a.anchor {
   padding-right: 10px;
   margin-bottom: 1em;
   color: rgba(255, 255, 255, 1);
+  border-bottom: 3rem solid black;
   a {
     color: #82d24e;
     &:hover {
@@ -144,6 +145,8 @@ a.anchor {
 .card {
   background-color: #2e2f2f !important;
   color: rgba(255, 255, 255, 1);
+  border: 1px solid #73bb44 !important;
+
   a {
     color: #82d24e;
     &:hover {
@@ -153,6 +156,14 @@ a.anchor {
       color: #82d24e;
     }
   }
+}
+
+hr {
+  border-top: 1px solid #73bb44 !important;
+}
+
+.font-white-important {
+  color: rgba(255, 255, 255, 1) !important;
 }
 
 .navbar {

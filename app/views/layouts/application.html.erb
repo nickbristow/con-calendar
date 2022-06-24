@@ -11,7 +11,9 @@
   </head>
 
   <body class='grey-background'>
-    <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+    <% if user_signed_in? %>
+      <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+    <% end if %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= render 'shared/header' %>
