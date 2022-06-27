@@ -1,9 +1,17 @@
 .row
+  .col-md-10
+    | Your full name is visible to event creators and admins to help organize the activities. All other users will see your first name and the first letter of your last name.
+  br
+.row
 	.col-md-5
 		= f.input :first_name, input_html: {class: 'form-control'}
 	.col-md-5
 		= f.input :last_name, input_html: {class: 'form-control'}
 hr
+.row
+  .col-md-10
+    | Adding your twitter is optional. Your twitter name will be shown on events you sign up for in the calendar.
+  br
 .row
 	.col-md-5
 		= f.input :twitter, input_html: {class: 'form-control'}
