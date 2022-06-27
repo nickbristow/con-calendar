@@ -87,6 +87,13 @@
               .col-md-10
                 = @event.description_md.html_safe
           .card-text
+            - if current_user.id == @event.owner_id
+              p 
+                | You own this event, so you can see full names of attendees to help organize the event
+            - if current_user.admin
+              p
+                | You are an admin, so you can see full names of attendees.
+          .card-text
             .row
               .col-md-2
                 strong Attendees:
@@ -97,7 +104,10 @@
             ul
               - @event.users.each do |user|
                 li
-                  = user.name
+                  - if current_user.id == @event.owner_id || current_user.admin
+                    = user.name
+                  - else
+                    = "#{user.first_name} #{user.last_name[0..0] if user.last_name}"
                   - unless user.twitter.blank?
                     = " - "
                     = link_to "twitter", "http://www.twitter.com/#{user.twitter}", target: "_blank", rel: "alternate"
