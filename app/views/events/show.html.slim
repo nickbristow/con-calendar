@@ -110,7 +110,7 @@
                     = "#{user.first_name} #{user.last_name[0..0] if user.last_name}"
                   - unless user.twitter.blank?
                     = " - "
-                    = link_to "twitter", "http://www.twitter.com/#{user.twitter}", target: "_blank", rel: "alternate"
+                    = link_to "@#{user.twitter}", "http://www.twitter.com/#{user.twitter}", target: "_blank", rel: "alternate"
           - if current_user.admin
             .card-text
               .row
