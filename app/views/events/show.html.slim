@@ -108,7 +108,7 @@
                     = user.name
                   - else
                     = "#{user.first_name} #{user.last_name[0..0] if user.last_name}"
-                  - unless user.twitter.blank?
+                  - unless user.twitter.blank? || user.twitter.include?('@gmail.com') || user.twitter =~ /.+\@/
                     = " - "
                     = link_to "#{"@" unless user.twitter.include?("@")}#{user.twitter}", "http://www.twitter.com/#{user.twitter}", target: "_blank", rel: "alternate"
           - if current_user.admin
