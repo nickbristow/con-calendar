@@ -96,26 +96,30 @@
           .card-text
             .row
               .col-md-2
+                - showAttendees = (current_user.id == @event.owner_id || current_user.admin) || (@event.category == 'game' || @event.category == 'outing')
                 strong Attendees:
               .col-md-2
                 = "#{@event.attendee_count}/#{@event.max_attendees}"
-                a data-toggle='collapse' href='#user-list' role='button' aria-expanded='false' aria-controls='user-list' = " show"
+                - if showAttendees
+                  a data-toggle='collapse' href='#user-list' role='button' aria-expanded='false' aria-controls='user-list' = " show"
           .collapse.card-text.collapse.multi-collapse id="user-list"
-            ul
-              - @event.users.each do |user|
-                li
-                  - if current_user.id == @event.owner_id || current_user.admin
-                    = user.name
-                  - else
-                    = "#{user.first_name} #{user.last_name[0..0] if user.last_name}"
-                  - unless user.twitter.blank? || user.twitter.include?('@gmail.com') || user.twitter =~ /.+\@/
-                    = " - "
-                    = link_to "#{"@" unless user.twitter.include?("@")}#{user.twitter}", "http://www.twitter.com/#{user.twitter}", target: "_blank", rel: "alternate"
+            - if showAttendees
+              ul
+                - @event.users.each do |user|
+                  - if user.first_name && user.last_name
+                    li
+                      - if current_user.id == @event.owner_id || current_user.admin
+                        = user.name
+                      - else
+                        = "#{user.first_name} #{user.last_name[0..0] if user.last_name}"
+                      - unless user.twitter.blank? || user.twitter.include?('@gmail.com') || user.twitter =~ /.+\@/
+                        = " - "
+                        = link_to "#{"@" unless user.twitter.include?("@")}#{user.twitter}", "http://www.twitter.com/#{user.twitter}", target: "_blank", rel: "alternate"
           - if current_user.admin
             .card-text
               .row
                 .col-md-2
-                  strong Emails (admin):
+                  strong Emails (admin only feature):
                 .col-md-2
                   a data-toggle='collapse' href='#user-emails' role='button' aria-expanded='false' aria-controls='user-emails' = " show emails"
             .collapse.card-text.collapse.multi-collapse id="user-emails"
