@@ -51,7 +51,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'cancancan', '~> 3.3.0'
 gem 'loofah'
-gem 'nokogiri', '~> 1.13.6'
+gem 'nokogiri', '~> 1.13.9'
 gem 'rails-html-sanitizer'
 
 gem 'newrelic_rpm'
