@@ -103,7 +103,7 @@ class Event < ApplicationRecord
     if user.admin
       %w[official_event panel game outing]
     else
-      ['game']
+      %w[game outing]
     end
   end
 
