@@ -100,7 +100,7 @@ Rails.application.configure do
 #   }
 #   config.force_ssl = true
 # end
-
+  config.mailer_sender = '"geeklyconcalendar.com" <help@geeklyconcalendar.com>'
   ActionMailer::Base.smtp_settings = {
     :address => 'smtp.sendgrid.net',
     :port => '587',
