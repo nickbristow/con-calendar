@@ -110,5 +110,5 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options ={:host => 'geekly-con-calendar.herokuapp.com', :protocol => 'https'}
+  config.action_mailer.default_url_options ={:host => 'geeklyconcalendar.com', :protocol => 'https'}
 end
