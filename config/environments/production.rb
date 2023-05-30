@@ -86,16 +86,28 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.active_job.queue_adapter = :sidekiq
-  config.action_mailer.default_url_options = { host: 'https://geekly-con-calendar.herokuapp.com' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.sendgrid.net',
-    domain: 'sendgrid.net',
-    port: 587,
-    user_name: 'apikey',
-    password: ENV['EMAIL_PASSWORD'],
-    authentication: 'plain',
-    enable_starttls_auto: true
-  }
-  config.force_ssl = true
-end
+#   config.action_mailer.default_url_options = { host: 'https://geekly-con-calendar.herokuapp.com' }
+#   config.action_mailer.delivery_method = :smtp
+#   config.action_mailer.smtp_settings = {
+#     address: 'smtp.sendgrid.net',
+#     domain: 'sendgrid.net',
+#     port: 587,
+#     user_name: 'apikey',
+#     password: ENV['EMAIL_PASSWORD'],
+#     authentication: 'plain',
+#     enable_starttls_auto: true
+#   }
+#   config.force_ssl = true
+# end
+
+ActionMailer::Base.smtp_settings = {
+  :address => 'smtp.sendgrid.net',
+  :port => '587',
+  :authentication => :plain,
+  :user_name => Rails.application.credentials.dig(:user_name),
+  :password => Rails.application.credentials.dig(:password),
+  :domain => 'heroku.com',
+  :enable_starttls_auto => true
+}
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.default_url_options ={:host => 'geekly-con-calendar.herokuapp.com', :protocol => 'https'}
